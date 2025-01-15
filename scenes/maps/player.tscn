@@ -5,4 +5,6 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="playerImage" type="Sprite2D" parent="."]
+position = Vector2(-7.5, -11.5)
+scale = Vector2(0.879032, 0.881443)
 texture = ExtResource("1_ydxbn")
