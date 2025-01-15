@@ -10,7 +10,7 @@ position = Vector2(0, -2)
 script = ExtResource("1_bxlcr")
 
 [node name="wolf" parent="." instance=ExtResource("3_7xacs")]
-position = Vector2(113, 192)
+position = Vector2(119, 274)
 collision_layer = 2
 
 [node name="StaticRedBox" parent="." instance=ExtResource("4_tgps5")]
