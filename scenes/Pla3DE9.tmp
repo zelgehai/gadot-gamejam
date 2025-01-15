@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://clv7wirhmcurm"]
+[gd_scene load_steps=4 format=3 uid="uid://clv7wirhmcurm"]
 
 [ext_resource type="Texture2D" uid="uid://hmq3sbet4au6" path="res://graphics/player/New_Piskel.png" id="1_2e6yj"]
 [ext_resource type="Script" path="res://scenes/PlayerScript.gd" id="1_y3rdn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t2ocm"]
+size = Vector2(65, 114)
 
 [node name="Player" type="CharacterBody2D"]
 texture_filter = 1
@@ -11,5 +14,6 @@ script = ExtResource("1_y3rdn")
 scale = Vector2(4.5, 4.5)
 texture = ExtResource("1_2e6yj")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(6, -54, -5, -40, -6, -27, -19, -26, -32, -23, -32, -10, -15, 1, -15, 12, -18, 37, -27, 62, 36, 63, 36, 54, 13, 13, 18, 8, 19, 0, 27, 0, 27, -5, 36, -5, 36, -22, 31, -27, 18, -27, 18, -36)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.5, 6)
+shape = SubResource("RectangleShape2D_t2ocm")

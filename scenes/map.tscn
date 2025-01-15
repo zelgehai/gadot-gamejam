@@ -1,11 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://bru7bw8mqa672"]
+[gd_scene load_steps=5 format=3 uid="uid://bru7bw8mqa672"]
 
 [ext_resource type="Script" path="res://scenes/mapScript.gd" id="1_bxlcr"]
 [ext_resource type="PackedScene" uid="uid://clv7wirhmcurm" path="res://scenes/Player.tscn" id="2_ftmc7"]
+[ext_resource type="PackedScene" uid="uid://co5lq37w3ttg8" path="res://scenes/wolf.tscn" id="3_7xacs"]
+[ext_resource type="PackedScene" uid="uid://dfajhbafhdpsm" path="res://scenes/StaticRedBoxScene.tscn" id="4_tgps5"]
 
 [node name="map" type="Node2D"]
 position = Vector2(0, -2)
 script = ExtResource("1_bxlcr")
 
+[node name="wolf" parent="." instance=ExtResource("3_7xacs")]
+position = Vector2(113, 192)
+collision_layer = 2
+
+[node name="StaticRedBox" parent="." instance=ExtResource("4_tgps5")]
+position = Vector2(871, 145)
+
 [node name="Player" parent="." instance=ExtResource("2_ftmc7")]
-position = Vector2(46, 351)
+position = Vector2(500, 250)
