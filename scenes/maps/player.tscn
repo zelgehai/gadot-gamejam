@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dua2ibmgq0hw8"]
+
+[ext_resource type="Texture2D" uid="uid://d1x1yr2v4n7lq" path="res://graphics/Blue_witch/basic_witch.png" id="1_ydxbn"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="playerImage" type="Sprite2D" parent="."]
+texture = ExtResource("1_ydxbn")
