@@ -9,4 +9,3 @@ script = ExtResource("1_bxlcr")
 
 [node name="Player" parent="." instance=ExtResource("2_ftmc7")]
 position = Vector2(46, 351)
-scale = Vector2(1, 0.980605)
