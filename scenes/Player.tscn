@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2288c35rk00m"]
+
+[ext_resource type="Texture2D" uid="uid://hmq3sbet4au6" path="res://graphics/player/New_Piskel.png" id="1_2e6yj"]
+[ext_resource type="Script" path="res://scenes/playerScript.gd" id="2_te021"]
+
+[sub_resource type="GDScript" id="GDScript_c7vnj"]
+script/source = "extends Node
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	print('ready Start')
+	#position = Vector2(100,200)
+	#Vector2 Vector2(x: float, y: float)
+	 # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	print('ready Ticking')
+	
+"
+
+[node name="Player" type="Node2D"]
+script = SubResource("GDScript_c7vnj")
+
+[node name="PlayerSprite" type="Sprite2D" parent="."]
+scale = Vector2(4.5, 4.5)
+texture = ExtResource("1_2e6yj")
+script = ExtResource("2_te021")
