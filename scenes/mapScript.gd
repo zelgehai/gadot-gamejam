@@ -8,5 +8,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if $Player.position.x > 500:
+	if $Player.position.x > 1150:
 		print("position exceeded!")
+		$Player.position.x = 0
