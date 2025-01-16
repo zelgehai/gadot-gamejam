@@ -8,11 +8,14 @@ func _process(_delta: float) -> void:
 			canPrint = false
 			$Timer.start()
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
+func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
 	inside = true
 
-func _on_area_2d_body_exited(body: Node2D) -> void:
+func _on_area_2d_body_exited(body: CharacterBody2D) -> void:
 	inside = false
 	
 func _on_timer_timeout() -> void:
 	canPrint = true
+	
+	#creating Instance
+	
