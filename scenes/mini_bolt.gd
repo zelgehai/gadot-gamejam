@@ -6,10 +6,18 @@ var direction: Vector2 = Vector2.UP
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#adding comment
-	pass
+	#starts timer
+	$spellDuration.start()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	position += direction * speed * delta
 	
+func _on_body_entered(body):
+	if body.has_method("hit"): #can also use "if "hit" in body:"
+		body.hit()
+	queue_free()
+
+
+func _on_spell_duration_timeout() -> void:
+	queue_free()
