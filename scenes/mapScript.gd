@@ -10,7 +10,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if(Input.is_action_just_pressed("left")):
+	if(Input.is_action_just_pressed("mouseLeftClick")):
 		spawnCard()
 
 func spawnCard() -> void:
@@ -25,5 +25,4 @@ func _on_player_enemy_spawner_signal(pos: Variant) -> void:
 	#creating instance of a wolf
 	var wolf = wolf_scene.instantiate()
 	wolf.position = pos
-	#wolf.look_at($Player.global_position)
-	add_child(wolf)
+	$enemies.add_child(wolf)

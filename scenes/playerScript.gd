@@ -2,10 +2,11 @@ extends CharacterBody2D
 signal enemySpawnerSignal(pos)
 var player_direction = Vector2(1,0)
 # Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
 	player_direction = (get_global_mouse_position() - position).normalized()
-	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(_delta: float) -> void:
 	look_at(get_global_mouse_position())
 	player_direction = (get_global_mouse_position() - position).normalized()
