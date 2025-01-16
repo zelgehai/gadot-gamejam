@@ -1,13 +1,16 @@
 extends CharacterBody2D
 signal enemySpawnerSignal(pos)
-
+var player_direction = Vector2(1,0)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print('Player Script Init')
-
+	player_direction = (get_global_mouse_position() - position).normalized()
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	look_at(get_global_mouse_position())
+	player_direction = (get_global_mouse_position() - position).normalized()
+	print('player_direction:')
+	print(player_direction)
 	#input
 	var direction = Input.get_vector("left","right","up", "down")
 	velocity = direction  * 400
@@ -20,3 +23,6 @@ func _process(_delta: float) -> void:
 		var selectedEnemyMarker = enemySpawnMarkers[randi() % enemySpawnMarkers.size()] #randomly selects one of the markers
 		#emit position we selected.
 		enemySpawnerSignal.emit(selectedEnemyMarker.global_position)
+
+func giveDirection() -> Vector2:
+	return player_direction
