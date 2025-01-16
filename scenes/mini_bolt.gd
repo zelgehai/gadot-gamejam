@@ -18,6 +18,5 @@ func _on_body_entered(body):
 		body.hit()
 	queue_free()
 
-
 func _on_spell_duration_timeout() -> void:
 	queue_free()

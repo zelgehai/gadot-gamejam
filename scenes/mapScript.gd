@@ -5,7 +5,7 @@ var MiniBolt: PackedScene = preload("res://scenes/MiniBolt.tscn")
 func _ready() -> void:
 	print("Setting Player Starting Position:")
 	$Player.position.x = 500
-	$Player.position.y = 350
+	$Player.position.y = 500
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -25,4 +25,6 @@ func _on_player_enemy_spawner_signal(pos: Variant) -> void:
 	#creating instance of a wolf
 	var wolf = wolf_scene.instantiate()
 	wolf.position = pos
+	#Passing player node reference to the wolf script
+	wolf.player_node = $Player
 	$enemies.add_child(wolf)
