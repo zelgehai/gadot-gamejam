@@ -1,11 +1,17 @@
 extends Node2D
 
+var wolf_scene: PackedScene = preload("res://scenes/wolf.tscn") #Make sure ending is .tscn
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	print("Setting Player Starting Position:")
 	$Player.position.x = 500
 	$Player.position.y = 250
+	#create instance of a wolf
+	var wolf = wolf_scene.instantiate() 
+	add_child(wolf)
+	wolf.position.x = 300
+	wolf.position.y = 150
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
