@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdjvxneknc2m7"
-path="res://.godot/imported/forrestBorder.png-11abb32d0ff273beba76dc180ec9b4aa.ctex"
+uid="uid://b8w3jb5sjn7vt"
+path="res://.godot/imported/forestBorder.png-609bbfd4b17f62f09d12cf931c48f953.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/terrain/forrestBorder.png"
-dest_files=["res://.godot/imported/forrestBorder.png-11abb32d0ff273beba76dc180ec9b4aa.ctex"]
+source_file="res://graphics/terrain/forestBorder.png"
+dest_files=["res://.godot/imported/forestBorder.png-609bbfd4b17f62f09d12cf931c48f953.ctex"]
 
 [params]
 
