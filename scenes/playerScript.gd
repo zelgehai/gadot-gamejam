@@ -9,8 +9,6 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	look_at(get_global_mouse_position())
 	player_direction = (get_global_mouse_position() - position).normalized()
-	print('player_direction:')
-	print(player_direction)
 	#input
 	var direction = Input.get_vector("left","right","up", "down")
 	velocity = direction  * 400
