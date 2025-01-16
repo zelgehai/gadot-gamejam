@@ -16,3 +16,9 @@ visibility_layer = 2
 
 [node name="Player" parent="." instance=ExtResource("2_ftmc7")]
 position = Vector2(500, 250)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+
+[connection signal="enemySpawnerSignal" from="Player" to="." method="_on_player_enemy_spawner_signal"]

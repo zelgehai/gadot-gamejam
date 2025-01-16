@@ -22,3 +22,15 @@ position = Vector2(500, 0)
 
 [node name="Marker2D2" type="Marker2D" parent="enemySpawnPositions"]
 position = Vector2(-500, 0)
+
+[node name="Marker2D3" type="Marker2D" parent="enemySpawnPositions"]
+position = Vector2(0, 500)
+
+[node name="Marker2D4" type="Marker2D" parent="enemySpawnPositions"]
+position = Vector2(0, -500)
+
+[node name="enemySpawnTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="enemySpawnTimer" to="." method="_on_enemy_spawn_timer_timeout"]

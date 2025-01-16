@@ -1,10 +1,9 @@
 extends CharacterBody2D
-
+signal enemySpawnerSignal(pos)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	print('Player Script Init')
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -13,5 +12,10 @@ func _process(_delta: float) -> void:
 	velocity = direction  * 400
 	move_and_slide()
 	
-	#if Input.is_action_pressed("left"):
-		#$Player.position.x -= 1
+	if Input.is_action_just_pressed("ePressed"):
+		print("sending random spawn Marker")
+		#randomly select marker
+		var enemySpawnMarkers = $enemySpawnPositions.get_children()
+		var selectedEnemyMarker = enemySpawnMarkers[randi() % enemySpawnMarkers.size()] #randomly selects one of the markers
+		#emit position we selected.
+		enemySpawnerSignal.emit(selectedEnemyMarker.global_position)
