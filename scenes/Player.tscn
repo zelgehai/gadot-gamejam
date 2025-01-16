@@ -9,6 +9,7 @@ script = ExtResource("1_y3rdn")
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
 texture_filter = 1
+rotation = 1.5708
 scale = Vector2(4.5, 4.5)
 texture = ExtResource("2_bhs6p")
 
@@ -24,10 +25,10 @@ position = Vector2(500, 0)
 position = Vector2(-500, 0)
 
 [node name="Marker2D3" type="Marker2D" parent="enemySpawnPositions"]
-position = Vector2(0, 500)
+position = Vector2(0, 150)
 
 [node name="Marker2D4" type="Marker2D" parent="enemySpawnPositions"]
-position = Vector2(0, -500)
+position = Vector2(0, -150)
 
 [node name="enemySpawnTimer" type="Timer" parent="."]
 wait_time = 2.0

@@ -17,4 +17,5 @@ func _on_player_enemy_spawner_signal(pos: Variant) -> void:
 	#creating instance of a wolf
 	var wolf = wolf_scene.instantiate()
 	wolf.position = pos
+	#wolf.look_at($Player.global_position)
 	add_child(wolf)

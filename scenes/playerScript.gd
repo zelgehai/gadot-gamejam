@@ -7,6 +7,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	look_at(get_global_mouse_position())
 	#input
 	var direction = Input.get_vector("left","right","up", "down")
 	velocity = direction  * 400
