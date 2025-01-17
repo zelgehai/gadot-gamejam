@@ -32,12 +32,6 @@ position = Vector2(0, 500)
 [node name="Marker2D4" type="Marker2D" parent="enemySpawnPositions"]
 position = Vector2(0, -500)
 
-[node name="enemySpawnTimer" type="Timer" parent="."]
-wait_time = 2.0
-one_shot = true
-
 [node name="CastPoint" type="Marker2D" parent="."]
 position = Vector2(40, 0)
 rotation = 1.5708
-
-[connection signal="timeout" from="enemySpawnTimer" to="." method="_on_enemy_spawn_timer_timeout"]
