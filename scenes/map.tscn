@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bru7bw8mqa672"]
+[gd_scene load_steps=8 format=3 uid="uid://bru7bw8mqa672"]
 
 [ext_resource type="Script" path="res://scenes/mapScript.gd" id="1_bxlcr"]
 [ext_resource type="Texture2D" uid="uid://bei3tkq50cond" path="res://graphics/terrain/forestBorder.png" id="2_6mily"]
 [ext_resource type="PackedScene" uid="uid://clv7wirhmcurm" path="res://scenes/Player.tscn" id="2_ftmc7"]
 [ext_resource type="PackedScene" uid="uid://dfajhbafhdpsm" path="res://scenes/StaticRedBoxScene.tscn" id="4_tgps5"]
+[ext_resource type="PackedScene" uid="uid://butonx8vh6n56" path="res://scenes/userInterface/UI_SCENE.tscn" id="5_f8nn4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rqhvp"]
 texture = ExtResource("2_6mily")
@@ -53,5 +54,7 @@ position_smoothing_enabled = true
 rotation_smoothing_enabled = true
 
 [node name="Projectiles" type="Node2D" parent="."]
+
+[node name="UI" parent="." instance=ExtResource("5_f8nn4")]
 
 [connection signal="enemySpawnerSignal" from="Player" to="." method="_on_player_enemy_spawner_signal"]

@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://butonx8vh6n56"]
+
+[ext_resource type="Script" path="res://scenes/userInterface/ui_scene.gd" id="1_5msul"]
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_5msul")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchor_left = 0.01
+anchor_top = 0.96
+anchor_right = 0.01
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "Health:"
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureProgressBar" type="ProgressBar" parent="Control/MarginContainer"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+max_value = 5.0
+step = 1.0
+value = 3.0
