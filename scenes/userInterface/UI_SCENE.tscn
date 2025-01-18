@@ -1,37 +1,47 @@
-[gd_scene load_steps=2 format=3 uid="uid://butonx8vh6n56"]
+[gd_scene load_steps=5 format=3 uid="uid://butonx8vh6n56"]
 
 [ext_resource type="Script" path="res://scenes/userInterface/ui_scene.gd" id="1_5msul"]
+[ext_resource type="Texture2D" uid="uid://d4fyswasn4p08" path="res://graphics/player/healthBG.png" id="2_7pcng"]
+[ext_resource type="Texture2D" uid="uid://06e4de1eitxs" path="res://graphics/player/healthOver.png" id="3_lnund"]
+[ext_resource type="Texture2D" uid="uid://b4kcixuv5u83d" path="res://graphics/player/healthPG.png" id="4_ng14c"]
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_5msul")
 
-[node name="Control" type="Control" parent="."]
+[node name="healthCounter" type="Control" parent="."]
+texture_filter = 1
 layout_mode = 3
-anchor_left = 0.01
-anchor_top = 0.96
-anchor_right = 0.01
-anchor_bottom = 1.0
-offset_top = -40.0
-offset_right = 40.0
+anchor_left = 0.45
+anchor_top = 0.846
+anchor_right = 0.5
+anchor_bottom = 0.846
+offset_left = -52.0
+offset_top = -88.0
+offset_right = 52.0
+grow_horizontal = 2
 grow_vertical = 0
+scale = Vector2(1.99382, 1.98206)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Label" type="Label" parent="Control/VBoxContainer"]
+[node name="Label" type="Label" parent="healthCounter"]
+texture_filter = 1
 layout_mode = 2
-text = "Health:"
+offset_left = 5.5
+offset_top = 45.5
+offset_right = 57.5
+offset_bottom = 69.5
+scale = Vector2(0.7, 0.7)
+text = "Health: 5"
+horizontal_alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="Control"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="TextureProgressBar" type="ProgressBar" parent="Control/MarginContainer"]
-custom_minimum_size = Vector2(150, 50)
+[node name="healthBar" type="TextureProgressBar" parent="healthCounter"]
+texture_filter = 1
 layout_mode = 2
+offset_top = 27.0
+offset_right = 52.0
+offset_bottom = 59.0
+scale = Vector2(3, 3)
 max_value = 5.0
-step = 1.0
-value = 3.0
+value = 5.0
+texture_under = ExtResource("2_7pcng")
+texture_over = ExtResource("3_lnund")
+texture_progress = ExtResource("4_ng14c")
