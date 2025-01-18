@@ -18,15 +18,31 @@ func _process(_delta: float) -> void:
 		look_at(player_node.global_position)
 		rotation += deg_to_rad(90)
 
-func hit():
-	print('damage')
-	queue_free() #Deletes wolf when hit
+#calls this func if wolf got hit
+func hit(position):
+	print('wolf got hit and died.')
+	call_deferred("queue_free") #Deletes wolf when hit. Used
+	#Loot Drop
+	var lootdrop = randi() % 100 + 1
+	print(lootdrop)
+	if (lootdrop <= 50):
+		#loading HP scene
+		var health_potion_scene = preload("res://scenes/items/HealthPotion.tscn")
+		#instance
+		var health_potion_instance = health_potion_scene.instantiate()
+		var items_node = get_tree().get_root().get_node("map/items")
+		items_node.call_deferred("add_child", health_potion_instance) #used this method because of debugger errors
+		#get_tree().get_root().get_node("map").get_node("items").add_child(health_potion_instance)
+		#spawn Potion at last location of wolf
+		health_potion_instance.global_position = position
+		health_potion_instance.spawn_healthpot()
+	
 	
 func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
 	if canDamage:
 		if body.has_method("player_hit"): #can also use "if "hit" in body:"
-			body.player_hit()
 			Globals.health_amount -=1
+			body.player_hit()
 		canDamage = false
 		$Timer.start()
 

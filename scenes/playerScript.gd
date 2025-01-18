@@ -2,10 +2,10 @@ extends CharacterBody2D
 signal enemySpawnerSignal(pos)
 var player_direction = Vector2(1,0)
 # Called when the node enters the scene tree for the first time.
+#Health Value at Start:
 
 func _ready() -> void:
 	print('player spawned')
-	print(Globals.health_amount)
 	player_direction = (get_global_mouse_position() - position).normalized()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
@@ -27,6 +27,7 @@ func _process(_delta: float) -> void:
 
 func player_hit():
 	print("Player was HIT, Health = ", Globals.health_amount)
+	$"../UI".update_health_amount()
 	
 func giveDirection() -> Vector2:
 	return player_direction

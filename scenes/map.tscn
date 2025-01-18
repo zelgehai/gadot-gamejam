@@ -41,6 +41,8 @@ position = Vector2(871, 145)
 
 [node name="enemies" type="Node2D" parent="."]
 
+[node name="items" type="Node2D" parent="."]
+
 [node name="Player" parent="." instance=ExtResource("2_ftmc7")]
 position = Vector2(500, 500)
 
