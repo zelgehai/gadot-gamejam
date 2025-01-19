@@ -24,9 +24,6 @@ sources/2 = SubResource("TileSetAtlasSource_rqhvp")
 position = Vector2(0, -2)
 script = ExtResource("1_bxlcr")
 
-[node name="StaticRedBox3" parent="." instance=ExtResource("4_tgps5")]
-position = Vector2(870, 431)
-
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
 scale = Vector2(4, 4)
@@ -47,7 +44,7 @@ position = Vector2(871, 145)
 [node name="items" type="Node2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("2_ftmc7")]
-position = Vector2(497, 449)
+position = Vector2(500, 500)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(0.7, 0.7)
@@ -61,8 +58,5 @@ rotation_smoothing_enabled = true
 [node name="Projectiles" type="Node2D" parent="."]
 
 [node name="UI" parent="." instance=ExtResource("5_f8nn4")]
-
-[node name="StaticRedBox2" parent="." instance=ExtResource("4_tgps5")]
-position = Vector2(341, 300)
 
 [connection signal="enemySpawnerSignal" from="Player" to="." method="_on_player_enemy_spawner_signal"]
