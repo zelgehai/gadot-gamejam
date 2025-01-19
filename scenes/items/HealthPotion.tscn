@@ -10,10 +10,10 @@ collision_layer = 16
 script = ExtResource("1_kihsh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
 texture = ExtResource("1_mg8eu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(-1, -3)
 shape = SubResource("CircleShape2D_und67")
 

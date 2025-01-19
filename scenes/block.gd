@@ -1,29 +1,29 @@
 extends Area2D
 
-@export var speed: int = 2000
+@export var speed: int = 0
 var direction: Vector2 = Vector2.UP
 var player_node: CharacterBody2D = null
 #var direction = (get_global_mouse_position() - position).normalized()
 
-var damage = 1
+var point = null
+var rotation_speed = .1
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var point = player_node.get_node("CastPoint")
+	point = player_node.get_node("SelfPoint")
 	position = point.global_position
 	rotation = point.global_rotation
 	direction = player_node.player_direction
+	Globals.Invulnerable = true
 	$spellDuration.start()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	position += direction * speed * delta
-	
-func _on_body_entered(body):
-	if body.name != "Player": #can also use "if "hit" in body:"
-		if body.has_method("hit"):
-			body.hit(damage)
-		queue_free()
-	
+func _process(_delta: float) -> void:
+	position = point.global_position
+	rotation += rotation_speed
+	direction = player_node.player_direction
+
 func _on_spell_duration_timeout() -> void:
+	Globals.Invulnerable = false
 	queue_free()

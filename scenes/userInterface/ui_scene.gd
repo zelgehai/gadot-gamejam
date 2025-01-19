@@ -8,4 +8,3 @@ extends CanvasLayer
 func update_health_amount():
 	health_label.text = "Health: " + str(Globals.health_amount)
 	health_bar.value = Globals.health_amount
-	
