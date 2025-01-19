@@ -22,7 +22,7 @@ func _process(_delta: float) -> void:
 func hit(position):
 	print('wolf got hit and died.')
 	call_deferred("queue_free") #Deletes wolf when hit. Used
-	#Loot Drop
+	#Loot Drop TESTING
 	var lootdrop = randi() % 100 + 1
 	print(lootdrop)
 	if (lootdrop <= 50):
