@@ -84,6 +84,7 @@ scale = Vector2(4.5, 4.5)
 texture = ExtResource("2_bhs6p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 texture_filter = 1
 scale = Vector2(4.5, 4.5)
 sprite_frames = SubResource("SpriteFrames_xwesl")
