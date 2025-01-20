@@ -17,6 +17,8 @@ func _process(_delta: float) -> void:
 		Globals.spawnKindleWall()
 	if(Input.is_action_just_pressed("SHFTLeftClick")):
 		Globals.spawnBlock()
+	if(Input.is_action_just_pressed("R_Pressed")):
+		Globals.spawnArcaneDash()
 		
 
 func _on_player_enemy_spawner_signal(pos: Variant) -> void:
