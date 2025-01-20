@@ -3,8 +3,11 @@ extends Area2D
 @export var speed: int = 2000
 var direction: Vector2 = Vector2.UP
 var player_node: CharacterBody2D = null
-#var direction = (get_global_mouse_position() - position).normalized()
 
+#Type of Card
+var type = "Arcane"
+
+#Damage Output
 var damage = 1
 
 # Called when the node enters the scene tree for the first time.
@@ -22,7 +25,9 @@ func _process(delta: float) -> void:
 func _on_body_entered(body):
 	if body.name != "Player": #can also use "if "hit" in body:"
 		if body.has_method("hit"):
-			body.hit(damage)
+			print(damage*Globals.arcaneDamageModifier)
+			print(Globals.buffArcane)
+			body.hit(damage*Globals.arcaneDamageModifier)
 		queue_free()
 	
 func _on_spell_duration_timeout() -> void:

@@ -6,9 +6,9 @@ var speed = 100
 var randomized_speed = 1
 
 var power = 1
-var itemType = 1
-var dropChance = 50
-var health = 5
+var itemType = 2#
+var dropChance = 100
+var health = 1
 
 func _ready() -> void:
 	direction_to_player = (player_node.global_position - global_position).normalized()
