@@ -17,6 +17,8 @@ func _process(_delta: float) -> void:
 		spawnKindleWall()
 	if(Input.is_action_just_pressed("SHFTLeftClick")):
 		spawnBlock()
+	if(Input.is_action_just_pressed("R_Pressed")):
+		spawnArcaneDash()
 		
 func spawnMiniBolt() -> void:
 	var MB = Globals.MiniBolt.instantiate() as Area2D
@@ -37,6 +39,11 @@ func spawnKindleWall() -> void:
 	var KW = Globals.KindleWall.instantiate() as Area2D
 	KW.player_node = $Player
 	$Projectiles.add_child(KW)
+	
+func spawnArcaneDash() -> void:
+	var AD = Globals.ArcaneDash.instantiate()
+	AD.player_node = $Player
+	$Projectiles.add_child(AD)
 
 func _on_player_enemy_spawner_signal(pos: Variant) -> void:
 	print("Spawning Wolf...")

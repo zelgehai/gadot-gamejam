@@ -1,0 +1,84 @@
+[gd_scene load_steps=12 format=3 uid="uid://hmowdqf1p1kj"]
+
+[ext_resource type="Texture2D" uid="uid://cj4r75yu2bh27" path="res://graphics/projectiles/ArcaneDash-Dissapear.png" id="1_0gnqo"]
+[ext_resource type="Script" path="res://scenes/cards/arcane_dash.gd" id="1_sn0to"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nmggf"]
+atlas = ExtResource("1_0gnqo")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mkyyy"]
+atlas = ExtResource("1_0gnqo")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bgsvi"]
+atlas = ExtResource("1_0gnqo")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ibgq"]
+atlas = ExtResource("1_0gnqo")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w825s"]
+atlas = ExtResource("1_0gnqo")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2ftk"]
+atlas = ExtResource("1_0gnqo")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_puwx1"]
+atlas = ExtResource("1_0gnqo")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dx36i"]
+atlas = ExtResource("1_0gnqo")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oyi1j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nmggf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mkyyy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bgsvi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ibgq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w825s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2ftk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_puwx1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dx36i")
+}],
+"loop": false,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="ArcaneDash" type="Area2D"]
+scale = Vector2(4.5, 4.5)
+script = ExtResource("1_sn0to")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_oyi1j")
+autoplay = "default"
+frame = 7
+frame_progress = 1.0
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

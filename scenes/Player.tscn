@@ -1,7 +1,72 @@
-[gd_scene load_steps=3 format=3 uid="uid://clv7wirhmcurm"]
+[gd_scene load_steps=13 format=3 uid="uid://clv7wirhmcurm"]
 
 [ext_resource type="Script" path="res://scenes/PlayerScript.gd" id="1_y3rdn"]
 [ext_resource type="Texture2D" uid="uid://dtchqnkkn3qi" path="res://graphics/player/playersprite.png" id="2_bhs6p"]
+[ext_resource type="Texture2D" uid="uid://dxfjm5815x70f" path="res://graphics/projectiles/ArcaneDash-Appear.png" id="3_lr8wj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_adth4"]
+atlas = ExtResource("3_lr8wj")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rmi21"]
+atlas = ExtResource("3_lr8wj")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1jhj"]
+atlas = ExtResource("3_lr8wj")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4nu8"]
+atlas = ExtResource("3_lr8wj")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2t6t"]
+atlas = ExtResource("3_lr8wj")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e7b61"]
+atlas = ExtResource("3_lr8wj")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ae06c"]
+atlas = ExtResource("3_lr8wj")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bynxe"]
+atlas = ExtResource("3_lr8wj")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eeyhw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_adth4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rmi21")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q1jhj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4nu8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w2t6t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e7b61")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ae06c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bynxe")
+}],
+"loop": false,
+"name": &"arcaneDashAppear",
+"speed": 12.0
+}]
 
 [node name="Player" type="CharacterBody2D"]
 texture_filter = 1
@@ -17,6 +82,14 @@ texture_filter = 1
 rotation = 1.5708
 scale = Vector2(4.5, 4.5)
 texture = ExtResource("2_bhs6p")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+rotation = 1.5708
+scale = Vector2(4.5, 4.5)
+sprite_frames = SubResource("SpriteFrames_eeyhw")
+animation = &"arcaneDashAppear"
+autoplay = "arcaneDashAppear"
 
 [node name="enemySpawnPositions" type="Node2D" parent="."]
 
