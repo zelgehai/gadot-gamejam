@@ -90,20 +90,6 @@ scale = Vector2(4.5, 4.5)
 sprite_frames = SubResource("SpriteFrames_xwesl")
 animation = &"arcaneDashAppear"
 
-[node name="enemySpawnPositions" type="Node2D" parent="."]
-
-[node name="Marker2D" type="Marker2D" parent="enemySpawnPositions"]
-position = Vector2(500, 0)
-
-[node name="Marker2D2" type="Marker2D" parent="enemySpawnPositions"]
-position = Vector2(-500, 0)
-
-[node name="Marker2D3" type="Marker2D" parent="enemySpawnPositions"]
-position = Vector2(0, 500)
-
-[node name="Marker2D4" type="Marker2D" parent="enemySpawnPositions"]
-position = Vector2(0, -500)
-
 [node name="CastPoint" type="Marker2D" parent="."]
 position = Vector2(40, 0)
 rotation = 1.5708

@@ -5,6 +5,15 @@ var health_amount = 7 #current health of the player
 var max_health_amount = 7 #Maximum health, stats can increase this
 var Invulnerable = false
 
+#Mob Variables
+var max_enemies_allowed = 25 #number of enemies allowed to be in the map / spawned
+var current_enemies_alive = 0 #number of enemies alive currently
+
+#Spawn Rates: # represents % chance. VALUES MUST ALL ADD TO 100!
+var wolf_Spawn_Rate = 70 
+var dire_Spawn_Rate = 25
+var ogre_Spawn_Rate = 5
+
 #Type Modifiers
 var arcaneDamageModifier = 1.00
 var elementalDamageModifier = 1.00
@@ -28,8 +37,11 @@ var KindleWall: PackedScene = preload("res://scenes/kindle_wall.tscn")
 var ArcaneOrb: PackedScene = preload("res://scenes/arcane_orb.tscn")
 var ArcaneDash: PackedScene = preload("res://scenes/cards/arcane_dash.tscn")
 
-#Item Scene
+#Enemy Scenes
 var wolf_scene: PackedScene = preload("res://scenes/wolf.tscn") #Make sure ending is .tscn
+var direWolf_scene: PackedScene = preload("res://scenes/direWolf.tscn")
+var ogre_scene: PackedScene = preload("res://scenes/ogre.tscn")
+#Item Scene
 var health_potion_scene: PackedScene = preload("res://scenes/items/HealthPotion.tscn")
 var arcane_orb_scene: PackedScene = preload("res://scenes/items/drop_arcane_orb.tscn")
 
@@ -43,6 +55,9 @@ func spawn_item(num1: int, num2: int, pos: Vector2):
 		var ranRoll = randf_range(0,100)
 		if(ranRoll <= num2):
 			spawn_arcaneorb(pos)
+#Mob Spawner
+func spawn_mob():
+	print("test")
 		
 func spawn_healthpot(pos: Vector2):
 	var HP = health_potion_scene.instantiate()
