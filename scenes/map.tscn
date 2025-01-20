@@ -108,7 +108,225 @@ rotation_smoothing_enabled = true
 
 [node name="UI" parent="." instance=ExtResource("5_f8nn4")]
 
-[node name="StaticRedBox2" parent="." instance=ExtResource("4_tgps5")]
-position = Vector2(341, 300)
+[node name="enemySpawners" type="Node2D" parent="."]
 
-[connection signal="enemySpawnerSignal" from="Player" to="." method="_on_player_enemy_spawner_signal"]
+[node name="Marker2D" type="Marker2D" parent="enemySpawners"]
+position = Vector2(500, 300)
+
+[node name="Marker2D2" type="Marker2D" parent="enemySpawners"]
+position = Vector2(1000, 300)
+
+[node name="Marker2D3" type="Marker2D" parent="enemySpawners"]
+position = Vector2(1500, 300)
+
+[node name="Marker2D4" type="Marker2D" parent="enemySpawners"]
+position = Vector2(2000, 300)
+
+[node name="Marker2D5" type="Marker2D" parent="enemySpawners"]
+position = Vector2(2500, 300)
+
+[node name="Marker2D6" type="Marker2D" parent="enemySpawners"]
+position = Vector2(3000, 300)
+
+[node name="Marker2D7" type="Marker2D" parent="enemySpawners"]
+position = Vector2(3500, 300)
+
+[node name="Marker2D8" type="Marker2D" parent="enemySpawners"]
+position = Vector2(4000, 300)
+
+[node name="Marker2D9" type="Marker2D" parent="enemySpawners"]
+position = Vector2(4500, 300)
+
+[node name="Marker2D10" type="Marker2D" parent="enemySpawners"]
+position = Vector2(500, 900)
+
+[node name="Marker2D11" type="Marker2D" parent="enemySpawners"]
+position = Vector2(1000, 900)
+
+[node name="Marker2D12" type="Marker2D" parent="enemySpawners"]
+position = Vector2(1500, 900)
+
+[node name="Marker2D13" type="Marker2D" parent="enemySpawners"]
+position = Vector2(2000, 900)
+
+[node name="Marker2D14" type="Marker2D" parent="enemySpawners"]
+position = Vector2(2500, 900)
+
+[node name="Marker2D15" type="Marker2D" parent="enemySpawners"]
+position = Vector2(3000, 900)
+
+[node name="Marker2D16" type="Marker2D" parent="enemySpawners"]
+position = Vector2(3500, 900)
+
+[node name="Marker2D17" type="Marker2D" parent="enemySpawners"]
+position = Vector2(4000, 900)
+
+[node name="Marker2D18" type="Marker2D" parent="enemySpawners"]
+position = Vector2(4500, 900)
+
+[node name="Marker2D19" type="Marker2D" parent="enemySpawners"]
+position = Vector2(500, 1500)
+
+[node name="Marker2D20" type="Marker2D" parent="enemySpawners"]
+position = Vector2(1000, 1500)
+
+[node name="Marker2D21" type="Marker2D" parent="enemySpawners"]
+position = Vector2(1500, 1500)
+
+[node name="Marker2D22" type="Marker2D" parent="enemySpawners"]
+position = Vector2(2000, 1500)
+
+[node name="Marker2D23" type="Marker2D" parent="enemySpawners"]
+position = Vector2(2500, 1500)
+
+[node name="Marker2D24" type="Marker2D" parent="enemySpawners"]
+position = Vector2(3000, 1500)
+
+[node name="Marker2D25" type="Marker2D" parent="enemySpawners"]
+position = Vector2(3500, 1500)
+
+[node name="Marker2D26" type="Marker2D" parent="enemySpawners"]
+position = Vector2(4000, 1500)
+
+[node name="Marker2D27" type="Marker2D" parent="enemySpawners"]
+position = Vector2(4500, 1500)
+
+[node name="Marker2D28" type="Marker2D" parent="enemySpawners"]
+position = Vector2(500, 2100)
+
+[node name="Marker2D29" type="Marker2D" parent="enemySpawners"]
+position = Vector2(1000, 2100)
+
+[node name="Marker2D30" type="Marker2D" parent="enemySpawners"]
+position = Vector2(1500, 2100)
+
+[node name="Marker2D31" type="Marker2D" parent="enemySpawners"]
+position = Vector2(2000, 2100)
+
+[node name="Marker2D32" type="Marker2D" parent="enemySpawners"]
+position = Vector2(2500, 2100)
+
+[node name="Marker2D33" type="Marker2D" parent="enemySpawners"]
+position = Vector2(3000, 2100)
+
+[node name="Marker2D34" type="Marker2D" parent="enemySpawners"]
+position = Vector2(3500, 2100)
+
+[node name="Marker2D35" type="Marker2D" parent="enemySpawners"]
+position = Vector2(4000, 2100)
+
+[node name="Marker2D36" type="Marker2D" parent="enemySpawners"]
+position = Vector2(4500, 2100)
+
+[node name="Marker2D37" type="Marker2D" parent="enemySpawners"]
+position = Vector2(500, 2700)
+
+[node name="Marker2D38" type="Marker2D" parent="enemySpawners"]
+position = Vector2(1000, 2700)
+
+[node name="Marker2D39" type="Marker2D" parent="enemySpawners"]
+position = Vector2(1500, 2700)
+
+[node name="Marker2D40" type="Marker2D" parent="enemySpawners"]
+position = Vector2(2000, 2700)
+
+[node name="Marker2D41" type="Marker2D" parent="enemySpawners"]
+position = Vector2(2500, 2700)
+
+[node name="Marker2D42" type="Marker2D" parent="enemySpawners"]
+position = Vector2(3000, 2700)
+
+[node name="Marker2D43" type="Marker2D" parent="enemySpawners"]
+position = Vector2(3500, 2700)
+
+[node name="Marker2D44" type="Marker2D" parent="enemySpawners"]
+position = Vector2(4000, 2700)
+
+[node name="Marker2D45" type="Marker2D" parent="enemySpawners"]
+position = Vector2(4500, 2700)
+
+[node name="Marker2D46" type="Marker2D" parent="enemySpawners"]
+position = Vector2(500, 3300)
+
+[node name="Marker2D47" type="Marker2D" parent="enemySpawners"]
+position = Vector2(1000, 3300)
+
+[node name="Marker2D48" type="Marker2D" parent="enemySpawners"]
+position = Vector2(1500, 3300)
+
+[node name="Marker2D49" type="Marker2D" parent="enemySpawners"]
+position = Vector2(2000, 3300)
+
+[node name="Marker2D50" type="Marker2D" parent="enemySpawners"]
+position = Vector2(2500, 3300)
+
+[node name="Marker2D51" type="Marker2D" parent="enemySpawners"]
+position = Vector2(3000, 3300)
+
+[node name="Marker2D52" type="Marker2D" parent="enemySpawners"]
+position = Vector2(3500, 3300)
+
+[node name="Marker2D53" type="Marker2D" parent="enemySpawners"]
+position = Vector2(4000, 3300)
+
+[node name="Marker2D54" type="Marker2D" parent="enemySpawners"]
+position = Vector2(4500, 3300)
+
+[node name="Marker2D55" type="Marker2D" parent="enemySpawners"]
+position = Vector2(500, 3900)
+
+[node name="Marker2D56" type="Marker2D" parent="enemySpawners"]
+position = Vector2(1000, 3900)
+
+[node name="Marker2D57" type="Marker2D" parent="enemySpawners"]
+position = Vector2(1500, 3900)
+
+[node name="Marker2D58" type="Marker2D" parent="enemySpawners"]
+position = Vector2(2000, 3900)
+
+[node name="Marker2D59" type="Marker2D" parent="enemySpawners"]
+position = Vector2(2500, 3900)
+
+[node name="Marker2D60" type="Marker2D" parent="enemySpawners"]
+position = Vector2(3000, 3900)
+
+[node name="Marker2D61" type="Marker2D" parent="enemySpawners"]
+position = Vector2(3500, 3900)
+
+[node name="Marker2D62" type="Marker2D" parent="enemySpawners"]
+position = Vector2(4000, 3900)
+
+[node name="Marker2D63" type="Marker2D" parent="enemySpawners"]
+position = Vector2(4500, 3900)
+
+[node name="Marker2D64" type="Marker2D" parent="enemySpawners"]
+position = Vector2(500, 4500)
+
+[node name="Marker2D65" type="Marker2D" parent="enemySpawners"]
+position = Vector2(1000, 4500)
+
+[node name="Marker2D66" type="Marker2D" parent="enemySpawners"]
+position = Vector2(1500, 4500)
+
+[node name="Marker2D67" type="Marker2D" parent="enemySpawners"]
+position = Vector2(2000, 4500)
+
+[node name="Marker2D68" type="Marker2D" parent="enemySpawners"]
+position = Vector2(2500, 4500)
+
+[node name="Marker2D69" type="Marker2D" parent="enemySpawners"]
+position = Vector2(3000, 4500)
+
+[node name="Marker2D70" type="Marker2D" parent="enemySpawners"]
+position = Vector2(3500, 4500)
+
+[node name="Marker2D71" type="Marker2D" parent="enemySpawners"]
+position = Vector2(4000, 4500)
+
+[node name="Marker2D72" type="Marker2D" parent="enemySpawners"]
+position = Vector2(4500, 4500)
+
+[node name="mobSpawnTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="timeout" from="mobSpawnTimer" to="." method="_on_mob_spawn_timer_timeout"]
