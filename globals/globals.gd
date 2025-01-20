@@ -2,7 +2,7 @@ extends Node
 
 #Player Variables
 var health_amount = 22 #current health of the player
-var max_health_amount = 35 #Maximum health, stats can increase this
+var max_health_amount = 22 #Maximum health, stats can increase this
 var Invulnerable = false
 
 #Packed Scenes
@@ -10,6 +10,7 @@ var MiniBolt: PackedScene = preload("res://scenes/MiniBolt.tscn")
 var Slash: PackedScene = preload("res://scenes/slash.tscn")
 var Block: PackedScene = preload("res://scenes/block.tscn")
 var KindleWall: PackedScene = preload("res://scenes/kindle_wall.tscn")
+var ArcaneDash: PackedScene = preload("res://scenes/cards/arcane_dash.tscn")
 
 var wolf_scene: PackedScene = preload("res://scenes/wolf.tscn") #Make sure ending is .tscn
 var health_potion_scene: PackedScene = preload("res://scenes/items/HealthPotion.tscn")
