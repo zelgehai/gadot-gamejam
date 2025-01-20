@@ -10,40 +10,14 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if(Input.is_action_just_pressed("mouseLeftClick") and !Input.is_action_just_pressed("SHFTLeftClick")):
-		spawnMiniBolt()
+		Globals.spawnMiniBolt()
 	if(Input.is_action_just_pressed("mouseRightClick") and !Input.is_action_just_pressed("SHFTRightClick")):
-		spawnSlash()
+		Globals.spawnSlash()
 	if(Input.is_action_just_pressed("SHFTRightClick")):
-		spawnKindleWall()
+		Globals.spawnKindleWall()
 	if(Input.is_action_just_pressed("SHFTLeftClick")):
-		spawnBlock()
-	if(Input.is_action_just_pressed("R_Pressed")):
-		spawnArcaneDash()
+		Globals.spawnBlock()
 		
-func spawnMiniBolt() -> void:
-	var MB = Globals.MiniBolt.instantiate() as Area2D
-	MB.player_node = $Player
-	$Projectiles.add_child(MB)
-
-func spawnSlash() -> void:
-	var SL = Globals.Slash.instantiate() as Area2D
-	SL.player_node = $Player
-	$Projectiles.add_child(SL)
-
-func spawnBlock() -> void:
-	var BK = Globals.Block.instantiate() as Area2D
-	BK.player_node = $Player
-	$Projectiles.add_child(BK)
-
-func spawnKindleWall() -> void:
-	var KW = Globals.KindleWall.instantiate() as Area2D
-	KW.player_node = $Player
-	$Projectiles.add_child(KW)
-	
-func spawnArcaneDash() -> void:
-	var AD = Globals.ArcaneDash.instantiate()
-	AD.player_node = $Player
-	$Projectiles.add_child(AD)
 
 func _on_player_enemy_spawner_signal(pos: Variant) -> void:
 	print("Spawning Wolf...")

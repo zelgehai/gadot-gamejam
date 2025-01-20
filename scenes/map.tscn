@@ -24,10 +24,8 @@ sources/2 = SubResource("TileSetAtlasSource_rqhvp")
 position = Vector2(0, -2)
 script = ExtResource("1_bxlcr")
 
-[node name="terrain" type="Node2D" parent="."]
-
 [node name="StaticRedBox3" parent="." instance=ExtResource("4_tgps5")]
-position = Vector2(982, 324)
+position = Vector2(870, 431)
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1

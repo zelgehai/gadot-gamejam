@@ -7,7 +7,7 @@ var player_direction = Vector2(1,0)
 func _ready() -> void:
 	print('player spawned')
 	player_direction = (get_global_mouse_position() - position).normalized()
-	# Called every frame. 'delta' is the elapsed time since the previous frame.
+# Called every frame. 'delta' is the elapsed time since the previous frame.
 
 func _process(_delta: float) -> void:
 	look_at(get_global_mouse_position())
@@ -31,10 +31,3 @@ func player_hit():
 	
 func giveDirection() -> Vector2:
 	return player_direction
-
-#Call this function to remove player sprite
-func remove_player_sprite():
-	print("sprite Func works")
-	var player_sprite = $PlayerSprite
-	player_sprite.texture = null
-	

@@ -3,8 +3,11 @@ extends Area2D
 @export var speed: int = 2000
 var direction: Vector2 = Vector2.UP
 var player_node: CharacterBody2D = null
-#var direction = (get_global_mouse_position() - position).normalized()
 
+#Type of Card
+var type = "Physical"
+
+#Damage Output
 var damage = 3
 
 # Called when the node enters the scene tree for the first time.
