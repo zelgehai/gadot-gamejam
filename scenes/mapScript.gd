@@ -38,8 +38,9 @@ func _process(_delta: float) -> void:
 
 #on Timer, Spawns a Random Mob type at a random mobSpawner Location
 func _on_mob_spawn_timer_timeout() -> void:
+	Globals.current_enemies_alive = $enemies.get_child_count()
+	print("# of enemies alive:", Globals.current_enemies_alive)
 	if Globals.current_enemies_alive < Globals.max_enemies_allowed:
-		print("number of alive enemies:", Globals.current_enemies_alive)
 		#select random enemySpawner Location
 		var enemySpawnMarkers = $enemySpawners.get_children()
 		var selectedEnemyMarker = enemySpawnMarkers[randi() % enemySpawnMarkers.size()] #Randomly selects one of the markers
@@ -50,17 +51,13 @@ func _on_mob_spawn_timer_timeout() -> void:
 			wolf.position = selectedEnemyMarker.global_position
 			wolf.player_node = $Player
 			$enemies.add_child(wolf) #spawned wolf
-			Globals.current_enemies_alive += 1
 		if mobType > Globals.wolf_Spawn_Rate and mobType <= Globals.wolf_Spawn_Rate+Globals.dire_Spawn_Rate:
 			var direWolf = Globals.direWolf_scene.instantiate()
 			direWolf.position = selectedEnemyMarker.global_position
 			direWolf.player_node = $Player
 			$enemies.add_child(direWolf)
-			Globals.current_enemies_alive += 1
 		if mobType > Globals.wolf_Spawn_Rate+Globals.dire_Spawn_Rate and mobType <= Globals.wolf_Spawn_Rate+Globals.dire_Spawn_Rate+Globals.ogre_Spawn_Rate:
 			var ogre = Globals.ogre_scene.instantiate()
 			ogre.position = selectedEnemyMarker.global_position
 			ogre.player_node = $Player
 			$enemies.add_child(ogre)
-			Globals.current_enemies_alive += 1
-		

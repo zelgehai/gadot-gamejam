@@ -28,8 +28,7 @@ func hit(dmg):
 	health -= dmg
 	if(health <= 0):
 		print('OGRE HAS died.')
-		Globals.current_enemies_alive -= 1 #deletes from the amount of enemies alive
-		call_deferred("queue_free") #Deletes Direwolf when hit. Used
+		call_deferred("queue_free") #Deletes Direwolf when hit.
 		Globals.spawn_item(itemType, dropChance, position)
 	
 
