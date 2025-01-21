@@ -1,34 +1,48 @@
-[gd_scene load_steps=8 format=3 uid="uid://drlm1bjwpp4q1"]
+[gd_scene load_steps=10 format=3 uid="uid://drlm1bjwpp4q1"]
 
 [ext_resource type="Script" path="res://scenes/block.gd" id="1_5crj2"]
-[ext_resource type="Texture2D" uid="uid://c3d2j0nssp3w" path="res://graphics/projectiles/Block.png" id="2_q0yso"]
+[ext_resource type="Texture2D" uid="uid://cby8r1aj366pc" path="res://graphics/projectiles/Block.png" id="2_q0yso"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yybtg"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_hm06o"]
 atlas = ExtResource("2_q0yso")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_82cgk"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_augjc"]
 atlas = ExtResource("2_q0yso")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8y7tk"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5xw0"]
 atlas = ExtResource("2_q0yso")
 region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rulw5"]
+atlas = ExtResource("2_q0yso")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4hxv"]
+atlas = ExtResource("2_q0yso")
+region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cppy7"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yybtg")
+"texture": SubResource("AtlasTexture_hm06o")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_82cgk")
+"texture": SubResource("AtlasTexture_augjc")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8y7tk")
+"texture": SubResource("AtlasTexture_p5xw0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rulw5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e4hxv")
 }],
 "loop": true,
-"name": &"default",
+"name": &"1",
 "speed": 5.0
 }]
 
@@ -36,14 +50,16 @@ animations = [{
 size = Vector2(11, 11)
 
 [node name="Block" type="Area2D"]
-scale = Vector2(4, 4)
+scale = Vector2(4.5, 4.5)
 script = ExtResource("1_5crj2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(0.5, 0)
+position = Vector2(4, 0)
+rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_cppy7")
-frame = 2
+animation = &"1"
+autoplay = "1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -0.5)

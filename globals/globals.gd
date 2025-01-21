@@ -55,7 +55,7 @@ func spawn_arcaneorb(pos: Vector2):
 	var items_node = get_tree().get_root().get_node("map/items")
 	items_node.call_deferred("add_child", AO)
 	AO.global_position = pos
-	AO.buffType = randi() % 2 + 1
+	AO.buffType = 3
 	print("spawning Arcane Orb")
 
 func spawnMiniBolt() -> void:

@@ -21,7 +21,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	position = point.global_position
-	rotation += rotation_speed
+	rotation = player_node.rotation
 	direction = player_node.player_direction
 
 func _on_spell_duration_timeout() -> void:

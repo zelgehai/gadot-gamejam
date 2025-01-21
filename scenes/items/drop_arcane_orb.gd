@@ -13,11 +13,15 @@ func _process(_delta: float) -> void:
 func _on_body_entered(_body: Node2D) -> void:
 	match buffType:
 		1:
-			print("Player picked up Arcane Buff")
+			print("Player picked up Physical Buff")
+			call_deferred("pushBuff")
+			call_deferred("queue_free")	
+		2:
+			print("Player picked up Elemental Buff")
 			call_deferred("pushBuff")
 			call_deferred("queue_free")
-		2:
-			print("Player picked up Physical Buff")
+		3:
+			print("Player picked up Arcane Buff")
 			call_deferred("pushBuff")
 			call_deferred("queue_free")
 	

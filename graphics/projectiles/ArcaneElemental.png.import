@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cby8r1aj366pc"
-path="res://.godot/imported/Block.png-df93b9d1f58b0abcee5fb21631c607b4.ctex"
+uid="uid://bxky823le78ci"
+path="res://.godot/imported/ArcaneElemental.png-1933c9e938cb64ad60fb4bb2d5155a9e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/projectiles/Block.png"
-dest_files=["res://.godot/imported/Block.png-df93b9d1f58b0abcee5fb21631c607b4.ctex"]
+source_file="res://graphics/projectiles/ArcaneElemental.png"
+dest_files=["res://.godot/imported/ArcaneElemental.png-1933c9e938cb64ad60fb4bb2d5155a9e.ctex"]
 
 [params]
 
