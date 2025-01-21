@@ -1,5 +1,5 @@
 extends Node2D
-
+var spawningActive = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	print("Setting Player Starting Position:")
@@ -22,13 +22,43 @@ func _process(_delta: float) -> void:
 		Globals.spawnKindleWall()
 	if(Input.is_action_just_pressed("SHFTLeftClick")):
 		Globals.spawnBlock()
-		
+	if(Input.is_action_just_pressed("R_Pressed")):
+		Globals.spawnArcaneDash()
+	if(Input.is_action_just_pressed("ePressed")): #Press E to activate enemy spawning
+		if spawningActive == false:
+			print("ACTIVATING ENEMY SPAWNING")
+			$mobSpawnTimer.start()	#starts enemy spawning
+			spawningActive = true 
+		else:
+			print("STOPPING ENEMY SPAWNING")
+			$mobSpawnTimer.stop()   #stops spawning
+			spawningActive = false
 
-func _on_player_enemy_spawner_signal(pos: Variant) -> void:
-	print("Spawning Wolf...")
-	#creating instance of a wolf
-	var wolf = Globals.wolf_scene.instantiate()
-	wolf.position = pos
-	#Passing player node reference to the wolf script
-	wolf.player_node = $Player
-	$enemies.add_child(wolf)
+#on Timer, Spawns a Random Mob type at a random mobSpawner Location
+func _on_mob_spawn_timer_timeout() -> void:
+	if Globals.current_enemies_alive < Globals.max_enemies_allowed:
+		print("number of alive enemies:", Globals.current_enemies_alive)
+		#select random enemySpawner Location
+		var enemySpawnMarkers = $enemySpawners.get_children()
+		var selectedEnemyMarker = enemySpawnMarkers[randi() % enemySpawnMarkers.size()] #Randomly selects one of the markers
+		var mobType = randi() % 100 + 1 #Spawns Random mob type from 1-> 2   #1 is for wolf 2-direWolf 3- Ogre
+		#print(mobType) #Debug purposes
+		if mobType <= Globals.wolf_Spawn_Rate: 
+			var wolf = Globals.wolf_scene.instantiate()
+			wolf.position = selectedEnemyMarker.global_position
+			wolf.player_node = $Player
+			$enemies.add_child(wolf) #spawned wolf
+			Globals.current_enemies_alive += 1
+		if mobType > Globals.wolf_Spawn_Rate and mobType <= Globals.wolf_Spawn_Rate+Globals.dire_Spawn_Rate:
+			var direWolf = Globals.direWolf_scene.instantiate()
+			direWolf.position = selectedEnemyMarker.global_position
+			direWolf.player_node = $Player
+			$enemies.add_child(direWolf)
+			Globals.current_enemies_alive += 1
+		if mobType > Globals.wolf_Spawn_Rate+Globals.dire_Spawn_Rate and mobType <= Globals.wolf_Spawn_Rate+Globals.dire_Spawn_Rate+Globals.ogre_Spawn_Rate:
+			var ogre = Globals.ogre_scene.instantiate()
+			ogre.position = selectedEnemyMarker.global_position
+			ogre.player_node = $Player
+			$enemies.add_child(ogre)
+			Globals.current_enemies_alive += 1
+		

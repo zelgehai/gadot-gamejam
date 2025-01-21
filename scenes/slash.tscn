@@ -42,7 +42,7 @@ animations = [{
 [node name="Slash" type="Area2D"]
 scale = Vector2(2.5, 2.5)
 collision_layer = 16
-collision_mask = 3
+collision_mask = 11
 script = ExtResource("1_02u07")
 speed = 250
 
