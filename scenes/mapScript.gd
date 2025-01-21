@@ -6,6 +6,11 @@ func _ready() -> void:
 	$Player.position.x = 500
 	$Player.position.y = 500
 	$UI.update_health_amount()
+	
+	#To test the integrity of the drop
+	$"Buff Container/Physical".buffType = 1
+	$"Buff Container/Elemental".buffType = 2
+	$"Buff Container/Arcane".buffType = 3
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

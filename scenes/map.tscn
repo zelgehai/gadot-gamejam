@@ -1,5 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://bru7bw8mqa672"]
 
+
 [ext_resource type="Script" path="res://scenes/mapScript.gd" id="1_bxlcr"]
 [ext_resource type="Texture2D" uid="uid://bei3tkq50cond" path="res://graphics/terrain/forestBorder.png" id="2_6mily"]
 [ext_resource type="PackedScene" uid="uid://cn3huhkqwa3to" path="res://scenes/tree_1.tscn" id="2_b1wri"]
@@ -8,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://d4jo3l1rowiww" path="res://graphics/terrain/plainGrass.png" id="4_qdluy"]
 [ext_resource type="PackedScene" uid="uid://dfajhbafhdpsm" path="res://scenes/StaticRedBoxScene.tscn" id="4_tgps5"]
 [ext_resource type="PackedScene" uid="uid://butonx8vh6n56" path="res://scenes/userInterface/UI_SCENE.tscn" id="5_f8nn4"]
+[ext_resource type="PackedScene" uid="uid://4l51mcl3o5id" path="res://scenes/items/drop_arcane_orb.tscn" id="6_u43r8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ek0rm"]
 texture = ExtResource("4_qdluy")
@@ -329,4 +331,16 @@ position = Vector2(4500, 4500)
 [node name="mobSpawnTimer" type="Timer" parent="."]
 wait_time = 0.5
 
+[node name="Buff Container" type="Node2D" parent="."]
+
+[node name="Physical" parent="Buff Container" instance=ExtResource("6_u43r8")]
+position = Vector2(366, 548)
+
+[node name="Arcane" parent="Buff Container" instance=ExtResource("6_u43r8")]
+position = Vector2(207, 547)
+
+[node name="Elemental" parent="Buff Container" instance=ExtResource("6_u43r8")]
+position = Vector2(282, 548)
+
+[connection signal="enemySpawnerSignal" from="Player" to="." method="_on_player_enemy_spawner_signal"]
 [connection signal="timeout" from="mobSpawnTimer" to="." method="_on_mob_spawn_timer_timeout"]

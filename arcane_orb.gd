@@ -10,6 +10,7 @@ var buffType = 1
 #Modifier amount for given stat (Arcane)
 var modifierArcane = .3
 var modifierPhysical = .3
+var modifierElemental = .3
 
 #Node for Player
 var point = null
@@ -26,6 +27,8 @@ func _ready() -> void:
 		$AnimatedSprite2D.animation = "1"
 	if(buffType == 2):
 		$AnimatedSprite2D.animation = "2"
+	if(buffType == 2):
+		$AnimatedSprite2D.animation = "3"
 	$spellDuration.start()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -34,36 +37,61 @@ func _process(_delta: float) -> void:
 	rotation = player_node.rotation
 	direction = player_node.player_direction
 	
-	if(Globals.buffArcane and !Globals.buffPhysical):
+	if(!Globals.buffArcane and !Globals.buffElemental and Globals.buffPhysical):
 		$AnimatedSprite2D.animation = "1"
-	if(Globals.buffPhysical and !Globals.buffArcane):
+	if(!Globals.buffArcane and Globals.buffElemental and !Globals.buffPhysical):
 		$AnimatedSprite2D.animation = "2"
-	if(Globals.buffPhysical and Globals.buffArcane):
+	if(Globals.buffArcane and !Globals.buffElemental and !Globals.buffPhysical):
 		$AnimatedSprite2D.animation = "3"
-	#$AnimatedSprite2D2.play("default")
+	if(Globals.buffArcane and !Globals.buffElemental and Globals.buffPhysical):
+		$AnimatedSprite2D.animation = "4"
+	if(Globals.buffArcane and Globals.buffElemental and !Globals.buffPhysical):
+		$AnimatedSprite2D.animation = "5"
+	if(!Globals.buffArcane and Globals.buffElemental and Globals.buffPhysical):
+		$AnimatedSprite2D.animation = "6"
+	if(Globals.buffArcane and Globals.buffElemental and Globals.buffPhysical):
+		$AnimatedSprite2D.animation = "7"
 
 func selectBuffType(type: int) -> void:
 	match type:
-		#Arcane Buff
+		#Physical Buff
 		1:
-			Globals.arcaneDamageModifier += modifierArcane
-			if(Globals.arcaneDamageModifier > Globals.MAX_arcaneDamageModifier):
-				Globals.buffArcane = true
-		2:
 			Globals.physicalDamageModifier += modifierPhysical
 			if(Globals.physicalDamageModifier > Globals.MAX_physicalDamageModifier):
 				Globals.buffPhysical = true
+			
+		#Elemental Buff
+		2:
+			Globals.elementalDamageModifier += modifierElemental
+			if(Globals.elementalDamageModifier > Globals.MAX_elementalDamageModifier):
+				Globals.buffElemental = true
+		#Arcane Buff
+		3:
+			Globals.arcaneDamageModifier += modifierArcane
+			if(Globals.arcaneDamageModifier > Globals.MAX_arcaneDamageModifier):
+				Globals.buffArcane = true
+			
 	
 func _on_spell_duration_timeout() -> void:
 	match buffType:
+		#Remove Physical Buff
 		1:
-			Globals.arcaneDamageModifier -= modifierArcane
-			
-			if(Globals.arcaneDamageModifier <= Globals.MAX_arcaneDamageModifier):
-				Globals.buffArcane = false
-		2:
 			Globals.physicalDamageModifier -= modifierPhysical
 			
 			if(Globals.physicalDamageModifier <= Globals.MAX_physicalDamageModifier):
 				Globals.buffPhysical = false
+		#Remove Arcane Buff	
+		2:
+			Globals.elementalDamageModifier -= modifierElemental
+			
+			if(Globals.elementalDamageModifier <= Globals.MAX_elementalDamageModifier):
+				Globals.buffElemental = false
+		#Remove Elemental Buff
+		3:
+			Globals.arcaneDamageModifier -= modifierArcane
+			
+			if(Globals.arcaneDamageModifier <= Globals.MAX_arcaneDamageModifier):
+				Globals.buffArcane = false
+			
+				
 	queue_free()
