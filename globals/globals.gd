@@ -6,7 +6,7 @@ var max_health_amount = 7 #Maximum health, stats can increase this
 var Invulnerable = false
 
 #Mob Variables
-var max_enemies_allowed = 25 #number of enemies allowed to be in the map / spawned
+var max_enemies_allowed = 50 #number of enemies allowed to be in the map / spawned
 var current_enemies_alive = 0 #number of enemies alive currently
 
 #Spawn Rates: # represents % chance. VALUES MUST ALL ADD TO 100!
