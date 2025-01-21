@@ -8,7 +8,6 @@ var player_node: CharacterBody2D = null
 var point = null
 var rotation_speed = .1
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	point = player_node.get_node("SelfPoint")

@@ -332,6 +332,9 @@ wait_time = 0.1
 
 [node name="Buff Container" type="Node2D" parent="."]
 
+[node name="Health" parent="Buff Container" instance=ExtResource("6_u43r8")]
+position = Vector2(524, 548)
+
 [node name="Physical" parent="Buff Container" instance=ExtResource("6_u43r8")]
 position = Vector2(366, 548)
 
@@ -341,4 +344,8 @@ position = Vector2(207, 547)
 [node name="Elemental" parent="Buff Container" instance=ExtResource("6_u43r8")]
 position = Vector2(282, 548)
 
+[node name="Speed" parent="Buff Container" instance=ExtResource("6_u43r8")]
+position = Vector2(454, 548)
 [connection signal="timeout" from="mobSpawnTimer" to="." method="_on_mob_spawn_timer_timeout"]
+
+

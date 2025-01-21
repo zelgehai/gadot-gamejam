@@ -11,12 +11,14 @@ func _ready() -> void:
 	$"Buff Container/Physical".buffType = 1
 	$"Buff Container/Elemental".buffType = 2
 	$"Buff Container/Arcane".buffType = 3
+	$"Buff Container/Speed".buffType = 4
+	$"Buff Container/Health".buffType = 5
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if(Input.is_action_pressed("mouseLeftClick") and !Input.is_action_just_pressed("SHFTLeftClick")):
 		Globals.spawnMiniBolt()
-	if(Input.is_action_just_pressed("mouseRightClick") and !Input.is_action_just_pressed("SHFTRightClick")):
+	if(Input.is_action_pressed("mouseRightClick") and !Input.is_action_just_pressed("SHFTRightClick")):
 		Globals.spawnSlash()
 	if(Input.is_action_just_pressed("SHFTRightClick")):
 		Globals.spawnKindleWall()
