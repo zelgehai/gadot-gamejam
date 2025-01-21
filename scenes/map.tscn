@@ -1,5 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bru7bw8mqa672"]
-
+[gd_scene load_steps=15 format=3 uid="uid://bru7bw8mqa672"]
 
 [ext_resource type="Script" path="res://scenes/mapScript.gd" id="1_bxlcr"]
 [ext_resource type="Texture2D" uid="uid://bei3tkq50cond" path="res://graphics/terrain/forestBorder.png" id="2_6mily"]
@@ -329,7 +328,7 @@ position = Vector2(4000, 4500)
 position = Vector2(4500, 4500)
 
 [node name="mobSpawnTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.1
 
 [node name="Buff Container" type="Node2D" parent="."]
 
@@ -342,5 +341,4 @@ position = Vector2(207, 547)
 [node name="Elemental" parent="Buff Container" instance=ExtResource("6_u43r8")]
 position = Vector2(282, 548)
 
-[connection signal="enemySpawnerSignal" from="Player" to="." method="_on_player_enemy_spawner_signal"]
 [connection signal="timeout" from="mobSpawnTimer" to="." method="_on_mob_spawn_timer_timeout"]

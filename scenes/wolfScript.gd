@@ -28,7 +28,6 @@ func hit(dmg):
 	health -= dmg
 	if(health <= 0):
 		print('wolf died.')
-		Globals.current_enemies_alive -= 1 #deletes from the amount of enemies alive
 		call_deferred("queue_free") #Deletes wolf when hit. Used
 		Globals.spawn_item(itemType, dropChance, position)
 	
