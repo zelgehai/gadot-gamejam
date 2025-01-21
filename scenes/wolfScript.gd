@@ -6,7 +6,7 @@ var speed = 100 #Max Speed of Wolf
 var randomized_speed = 1
 
 var power = 1
-var itemType = 2#
+var itemType = 4#
 var dropChance = 100
 var health = 1
 

@@ -1,12 +1,14 @@
 extends Node
 
+var canShoot = true
+
 #Player Variables
-var health_amount = 7 #current health of the player
-var max_health_amount = 7 #Maximum health, stats can increase this
+var health_amount = 10 #current health of the player
+var max_health_amount = 20 #Maximum health, stats can increase this
 var Invulnerable = false
 
 #Mob Variables
-var max_enemies_allowed = 25 #number of enemies allowed to be in the map / spawned
+var max_enemies_allowed = 500 #number of enemies allowed to be in the map / spawned
 var current_enemies_alive = 0 #number of enemies alive currently
 
 #Spawn Rates: # represents % chance. VALUES MUST ALL ADD TO 100!
@@ -18,15 +20,18 @@ var ogre_Spawn_Rate = 5
 var arcaneDamageModifier = 1.00
 var elementalDamageModifier = 1.00
 var physicalDamageModifier = 1.00
+var speedModifier = 1.00
 
 var MAX_arcaneDamageModifier = 1.00
 var MAX_elementalDamageModifier = 1.00
 var MAX_physicalDamageModifier = 1.00
+var MAX_speedModifier = 1.00
 
 #Typing Rotation
 var buffElemental = false
 var buffArcane = false
 var buffPhysical = false
+var buffSpeed = false
 
 #Packed Scenes
 var MiniBolt: PackedScene = preload("res://scenes/MiniBolt.tscn")
@@ -46,19 +51,17 @@ var health_potion_scene: PackedScene = preload("res://scenes/items/HealthPotion.
 var arcane_orb_scene: PackedScene = preload("res://scenes/items/drop_arcane_orb.tscn")
 
 #Spawn Stuff
-func spawn_item(num1: int, num2: int, pos: Vector2):
-	if(num1 == 1):
-		var ranRoll = randf_range(0,100)
-		if(ranRoll <= num2):
-			spawn_healthpot(pos)
-	if(num1 == 2):
-		var ranRoll = randf_range(0,100)
-		if(ranRoll <= num2):
-			spawn_arcaneorb(pos)
 #Mob Spawner
 func spawn_mob():
 	print("test")
-		
+	
+#num1 = itemType num2 = percentage (out of 100) pos = the spawn location
+func spawn_item(num1: int, num2: int, pos: Vector2):
+	var ranRoll = randf_range(0,100)
+	
+	if(ranRoll <= num2):
+		spawn_arcaneorb(pos, num1)
+			
 func spawn_healthpot(pos: Vector2):
 	var HP = health_potion_scene.instantiate()
 	var items_node = get_tree().get_root().get_node("map/items")
@@ -66,15 +69,16 @@ func spawn_healthpot(pos: Vector2):
 	HP.global_position = pos
 	print("spawning Health_potion")
 
-func spawn_arcaneorb(pos: Vector2):
+func spawn_arcaneorb(pos: Vector2, type: int):
 	var AO = arcane_orb_scene.instantiate()
 	var items_node = get_tree().get_root().get_node("map/items")
 	items_node.call_deferred("add_child", AO)
 	AO.global_position = pos
-	AO.buffType = 3
+	AO.buffType = type
 	print("spawning Arcane Orb")
 
 func spawnMiniBolt() -> void:
+	canShoot = true
 	var MB = Globals.MiniBolt.instantiate() as Area2D
 	MB.player_node = $"../map/Player"
 	$"../map/Projectiles".add_child(MB)
@@ -108,7 +112,6 @@ func spawnArcaneDash() -> void:
 #General Functions
 func damage_Player(dmg):
 	health_amount -= dmg
-
 
 
 #Type Modifiers Updates???

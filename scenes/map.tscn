@@ -1,5 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bru7bw8mqa672"]
-
+[gd_scene load_steps=15 format=3 uid="uid://bru7bw8mqa672"]
 
 [ext_resource type="Script" path="res://scenes/mapScript.gd" id="1_bxlcr"]
 [ext_resource type="Texture2D" uid="uid://bei3tkq50cond" path="res://graphics/terrain/forestBorder.png" id="2_6mily"]
@@ -333,6 +332,9 @@ wait_time = 0.5
 
 [node name="Buff Container" type="Node2D" parent="."]
 
+[node name="Health" parent="Buff Container" instance=ExtResource("6_u43r8")]
+position = Vector2(524, 548)
+
 [node name="Physical" parent="Buff Container" instance=ExtResource("6_u43r8")]
 position = Vector2(366, 548)
 
@@ -342,5 +344,7 @@ position = Vector2(207, 547)
 [node name="Elemental" parent="Buff Container" instance=ExtResource("6_u43r8")]
 position = Vector2(282, 548)
 
-[connection signal="enemySpawnerSignal" from="Player" to="." method="_on_player_enemy_spawner_signal"]
+[node name="Speed" parent="Buff Container" instance=ExtResource("6_u43r8")]
+position = Vector2(454, 548)
+
 [connection signal="timeout" from="mobSpawnTimer" to="." method="_on_mob_spawn_timer_timeout"]

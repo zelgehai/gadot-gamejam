@@ -1,5 +1,6 @@
 extends CharacterBody2D
 var player_direction = Vector2(1,0)
+var player_speed = 400
 # Called when the node enters the scene tree for the first time.
 #Health Value at Start:
 
@@ -12,9 +13,8 @@ func _process(_delta: float) -> void:
 	player_direction = (get_global_mouse_position() - position).normalized()
 	#input
 	var direction = Input.get_vector("left","right","up", "down")
-	velocity = direction  * 400
+	velocity = direction  * player_speed * Globals.speedModifier
 	move_and_slide()
-	
 
 func player_hit():
 	print("Player was HIT, Health = ", Globals.health_amount)

@@ -24,6 +24,14 @@ func _on_body_entered(_body: Node2D) -> void:
 			print("Player picked up Arcane Buff")
 			call_deferred("pushBuff")
 			call_deferred("queue_free")
+		4:
+			print("Player picked up Speed Buff")
+			call_deferred("pushBuff")
+			call_deferred("queue_free")
+		5:
+			print("Player picked up Health Buff")
+			call_deferred("pushBuff")
+			call_deferred("queue_free")
 	
 func pushBuff() -> void:
 	Globals.spawnArcaneOrb(buffType)
