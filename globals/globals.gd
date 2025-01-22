@@ -11,13 +11,13 @@ var Invulnerable = false
 #Mob Variables
 
 var max_enemies_allowed = 500 #number of enemies allowed to be in the map / spawned
-
 var current_enemies_alive = 0 #number of enemies alive currently
 
 #Spawn Rates: # represents % chance. VALUES MUST ALL ADD TO 100!
-var wolf_Spawn_Rate = 70 
+var wolf_Spawn_Rate = 60 #60-25-3-12
 var dire_Spawn_Rate = 25
-var ogre_Spawn_Rate = 5
+var ogre_Spawn_Rate = 1
+var wisp_Spawn_Rate = 14
 
 #Type Modifiers
 var arcaneDamageModifier = 1.00
@@ -41,6 +41,7 @@ var MiniBolt: PackedScene = preload("res://scenes/MiniBolt.tscn")
 var Slash: PackedScene = preload("res://scenes/slash.tscn")
 var Block: PackedScene = preload("res://scenes/block.tscn")
 var KindleWall: PackedScene = preload("res://scenes/kindle_wall.tscn")
+var wisp_Spell: PackedScene = preload("res://scenes/wisp_spell.tscn")
 #Effects from Drops
 var ArcaneOrb: PackedScene = preload("res://scenes/arcane_orb.tscn")
 var ArcaneDash: PackedScene = preload("res://scenes/cards/arcane_dash.tscn")
@@ -49,6 +50,7 @@ var ArcaneDash: PackedScene = preload("res://scenes/cards/arcane_dash.tscn")
 var wolf_scene: PackedScene = preload("res://scenes/wolf.tscn") #Make sure ending is .tscn
 var direWolf_scene: PackedScene = preload("res://scenes/direWolf.tscn")
 var ogre_scene: PackedScene = preload("res://scenes/ogre.tscn")
+var wisp_scene: PackedScene = preload("res://scenes/wisp.tscn")
 #Item Scene
 var health_potion_scene: PackedScene = preload("res://scenes/items/HealthPotion.tscn")
 var arcane_orb_scene: PackedScene = preload("res://scenes/items/drop_arcane_orb.tscn")
@@ -125,9 +127,10 @@ func reset_values() -> void:
 	max_enemies_allowed = 500 #number of enemies allowed to be in the map / spawned
 	current_enemies_alive = 0 #number of enemies alive currently
 	#Spawn Rates: # represents % chance. VALUES MUST ALL ADD TO 100!
-	wolf_Spawn_Rate = 70 
+	wolf_Spawn_Rate = 60 
 	dire_Spawn_Rate = 25
-	ogre_Spawn_Rate = 5
+	ogre_Spawn_Rate = 1
+	wisp_Spawn_Rate = 14
 	arcaneDamageModifier = 1.00
 	elementalDamageModifier = 1.00
 	physicalDamageModifier = 1.00

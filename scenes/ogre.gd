@@ -5,10 +5,10 @@ var direction_to_player = Vector2(1,0)
 var speed = 200 #Max Speed of Ogre
 var randomized_speed = 1
 
-var power = 1
+var power = 10
 var itemType = 2#
 var dropChance = 100
-var health = 20
+var health = 500
 
 func _ready() -> void:
 	direction_to_player = (player_node.global_position - global_position).normalized()

@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://duuomrts5u32e"]
+
+[ext_resource type="Script" path="res://wisp_spell.gd" id="1_6shtj"]
+[ext_resource type="Texture2D" uid="uid://j782hjmt8fig" path="res://graphics/projectiles/wisp_spell.png" id="2_fekrt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kamtf"]
+atlas = ExtResource("2_fekrt")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6il4"]
+atlas = ExtResource("2_fekrt")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8kp3w"]
+atlas = ExtResource("2_fekrt")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g5w50"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kamtf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p6il4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8kp3w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_138q2"]
+radius = 3.80058
+
+[node name="wisp_Spell" type="Area2D"]
+texture_filter = 1
+scale = Vector2(3, 3)
+script = ExtResource("1_6shtj")
+speed = null
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1.33333, 1)
+sprite_frames = SubResource("SpriteFrames_g5w50")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.333333, -2)
+shape = SubResource("CircleShape2D_138q2")
+
+[node name="spellDuration" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="spellDuration" to="." method="_on_spell_duration_timeout"]

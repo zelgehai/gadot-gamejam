@@ -106,6 +106,8 @@ rotation_smoothing_enabled = true
 
 [node name="Projectiles" type="Node2D" parent="."]
 
+[node name="EnemyProjectiles" type="Node2D" parent="."]
+
 [node name="UI" parent="." instance=ExtResource("5_f8nn4")]
 
 [node name="enemySpawners" type="Node2D" parent="."]
