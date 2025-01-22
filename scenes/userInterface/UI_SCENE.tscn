@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://butonx8vh6n56"]
+[gd_scene load_steps=6 format=3 uid="uid://butonx8vh6n56"]
 
 [ext_resource type="Script" path="res://graphics/projectiles/ui_scene.gd" id="1_5msul"]
 [ext_resource type="Texture2D" uid="uid://d4fyswasn4p08" path="res://graphics/player/healthBG.png" id="2_7pcng"]
 [ext_resource type="Texture2D" uid="uid://06e4de1eitxs" path="res://graphics/player/healthOver.png" id="3_lnund"]
 [ext_resource type="Texture2D" uid="uid://b4kcixuv5u83d" path="res://graphics/player/healthPG.png" id="4_ng14c"]
+[ext_resource type="Script" path="res://scenes/userInterface/map_timer.gd" id="5_dgtim"]
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_5msul")
@@ -45,3 +46,18 @@ value = 7.0
 texture_under = ExtResource("2_7pcng")
 texture_over = ExtResource("3_lnund")
 texture_progress = ExtResource("4_ng14c")
+
+[node name="mapTimer" type="Node2D" parent="."]
+script = ExtResource("5_dgtim")
+
+[node name="TimerLabel" type="Label" parent="mapTimer"]
+offset_left = 1160.0
+offset_top = 19.0
+offset_right = 1273.0
+offset_bottom = 42.0
+text = "Timer: 0 m 01s"
+
+[node name="Timer" type="Timer" parent="mapTimer"]
+autostart = true
+
+[connection signal="timeout" from="mapTimer/Timer" to="mapTimer" method="_on_timer_timeout"]
