@@ -3,13 +3,16 @@ extends Node
 var canShoot = true
 
 var elapsed_time = 0
+
+#Deck List?
+var cardList = [1, 2, 3, 4]
+
 #Player Variables
 var health_amount = 10 #current health of the player
 var max_health_amount = 20 #Maximum health, stats can increase this
 var Invulnerable = false
 
 #Mob Variables
-
 var max_enemies_allowed = 500 #number of enemies allowed to be in the map / spawned
 var current_enemies_alive = 0 #number of enemies alive currently
 

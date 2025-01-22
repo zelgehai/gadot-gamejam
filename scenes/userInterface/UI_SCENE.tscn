@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://butonx8vh6n56"]
+[gd_scene load_steps=7 format=3 uid="uid://butonx8vh6n56"]
 
 [ext_resource type="Script" path="res://graphics/projectiles/ui_scene.gd" id="1_5msul"]
 [ext_resource type="Texture2D" uid="uid://d4fyswasn4p08" path="res://graphics/player/healthBG.png" id="2_7pcng"]
 [ext_resource type="Texture2D" uid="uid://06e4de1eitxs" path="res://graphics/player/healthOver.png" id="3_lnund"]
 [ext_resource type="Texture2D" uid="uid://b4kcixuv5u83d" path="res://graphics/player/healthPG.png" id="4_ng14c"]
 [ext_resource type="Script" path="res://scenes/userInterface/map_timer.gd" id="5_dgtim"]
+[ext_resource type="PackedScene" uid="uid://datqd22ua8q0a" path="res://scenes/card_frame.tscn" id="6_ni0p0"]
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_5msul")
@@ -38,7 +39,7 @@ horizontal_alignment = 1
 texture_filter = 1
 layout_mode = 2
 offset_top = 27.0
-offset_right = 52.0
+offset_right = 32.0
 offset_bottom = 59.0
 scale = Vector2(3, 3)
 max_value = 20.0
@@ -59,5 +60,7 @@ text = "Timer: 0 m 01s"
 
 [node name="Timer" type="Timer" parent="mapTimer"]
 autostart = true
+
+[node name="CardFrame" parent="." instance=ExtResource("6_ni0p0")]
 
 [connection signal="timeout" from="mapTimer/Timer" to="mapTimer" method="_on_timer_timeout"]

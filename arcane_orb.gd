@@ -43,7 +43,7 @@ func _process(_delta: float) -> void:
 	position = point.global_position
 	rotation = player_node.rotation
 	direction = player_node.player_direction
-	if(buffType != 4 or buffType != 5):
+	if(buffType == 1 or buffType == 2 or buffType == 3):
 		if(!Globals.buffArcane and !Globals.buffElemental and Globals.buffPhysical):
 			$AnimatedSprite2D.animation = "1"
 		if(!Globals.buffArcane and Globals.buffElemental and !Globals.buffPhysical):
