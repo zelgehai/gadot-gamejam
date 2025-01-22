@@ -3,8 +3,8 @@ var spawningActive = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	print("Setting Player Starting Position:")
-	$Player.position.x = 500
-	$Player.position.y = 500
+	$Player.position.x = 1000
+	$Player.position.y = 700
 	$UI.update_health_amount()
 	
 	#To test the integrity of the drop
@@ -36,6 +36,7 @@ func _process(_delta: float) -> void:
 			$mobSpawnTimer.stop()   #stops spawning
 			spawningActive = false
 
+
 #on Timer, Spawns a Random Mob type at a random mobSpawner Location
 func _on_mob_spawn_timer_timeout() -> void:
 	Globals.current_enemies_alive = $enemies.get_child_count()
@@ -66,3 +67,17 @@ func _on_mob_spawn_timer_timeout() -> void:
 			wisp.position = selectedEnemyMarker.global_position
 			wisp.player_node = $Player
 			$enemies.add_child(wisp)
+		if mobType > Globals.wolf_Spawn_Rate+Globals.dire_Spawn_Rate+Globals.ogre_Spawn_Rate+Globals.wisp_Spawn_Rate and mobType <= Globals.wolf_Spawn_Rate+Globals.dire_Spawn_Rate+Globals.ogre_Spawn_Rate+Globals.wisp_Spawn_Rate+Globals.greater_wisp_Spawn_Rate:
+			var gwisp = Globals.greater_wisp_scene.instantiate()
+			gwisp.position = selectedEnemyMarker.global_position
+			gwisp.player_node = $Player
+			$enemies.add_child(gwisp)
+
+
+func _on_time_when_spawn_rate_increases_timeout() -> void:
+	var max_spawnrate = 0.11
+	if $mobSpawnTimer.wait_time <= max_spawnrate:
+		return
+	else:
+		$mobSpawnTimer.wait_time -= 0.1
+		print("increassing spawn rate to:", $mobSpawnTimer.wait_time)

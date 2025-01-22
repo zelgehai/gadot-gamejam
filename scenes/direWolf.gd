@@ -4,11 +4,13 @@ var player_node: CharacterBody2D = null #reference to the player node
 var direction_to_player = Vector2(1,0)
 var speed = 100 #Max Speed of Wolf
 var randomized_speed = 1
+var is_dead = false
 
 var power = 1
 var itemType = 2#
 var dropChance = 100
-var health = 3
+var health = 5
+var mob_experience = 1
 
 func _ready() -> void:
 	direction_to_player = (player_node.global_position - global_position).normalized()
@@ -25,12 +27,15 @@ func _process(_delta: float) -> void:
 		
 #calls this func if direwolf got hit
 func hit(dmg):
+	if is_dead:
+		return
+		
 	health -= dmg
 	if(health <= 0):
-		print('DIRE WOLF died.')
+		is_dead = true
 		call_deferred("queue_free") #Deletes Direwolf when hit. Used
 		Globals.spawn_item(itemType, dropChance, position)
-	
+		$"../../UI".update_expTracker(mob_experience)
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

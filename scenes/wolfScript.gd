@@ -4,11 +4,14 @@ var player_node: CharacterBody2D = null #reference to the player node
 var direction_to_player = Vector2(1,0)
 var speed = 100 #Max Speed of Wolf
 var randomized_speed = 1
+#flag needed to prevent duplicate exp gain
+var is_dead = false #Flag to prevent duplicate death logic
 
 var power = 1
 var itemType = 4#
 var dropChance = 100
 var health = 1
+var mob_experience = 1
 
 func _ready() -> void:
 	direction_to_player = (player_node.global_position - global_position).normalized()
@@ -25,11 +28,15 @@ func _process(_delta: float) -> void:
 		
 #calls this func if wolf got hit
 func hit(dmg):
+	if is_dead:
+		return #exits if the wolf is already dead
 	health -= dmg
 	if(health <= 0):
-		print('wolf died.')
+		is_dead = true #Marks as dead to prevent duplicate logic
+		#print('wolf died.')
 		call_deferred("queue_free") #Deletes wolf when hit. Used
 		Globals.spawn_item(itemType, dropChance, position)
+		$"../../UI".update_expTracker(mob_experience) #updates Player Exp
 	
 func _on_area_2d_body_entered(body) -> void:
 	if canDamage and !Globals.Invulnerable:

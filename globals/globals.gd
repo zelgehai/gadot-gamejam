@@ -11,16 +11,18 @@ var cardList = [1, 2, 3, 4]
 var health_amount = 10 #current health of the player
 var max_health_amount = 20 #Maximum health, stats can increase this
 var Invulnerable = false
+var player_experience = 0
 
 #Mob Variables
 var max_enemies_allowed = 500 #number of enemies allowed to be in the map / spawned
 var current_enemies_alive = 0 #number of enemies alive currently
 
 #Spawn Rates: # represents % chance. VALUES MUST ALL ADD TO 100!
-var wolf_Spawn_Rate = 60 #60-25-3-12
-var dire_Spawn_Rate = 25
+var wolf_Spawn_Rate = 55 #55-20-1-15-9
+var dire_Spawn_Rate = 20
 var ogre_Spawn_Rate = 1
-var wisp_Spawn_Rate = 14
+var wisp_Spawn_Rate = 15
+var greater_wisp_Spawn_Rate = 9
 
 #Type Modifiers
 var arcaneDamageModifier = 1.00
@@ -45,6 +47,7 @@ var Slash: PackedScene = preload("res://scenes/slash.tscn")
 var Block: PackedScene = preload("res://scenes/block.tscn")
 var KindleWall: PackedScene = preload("res://scenes/kindle_wall.tscn")
 var wisp_Spell: PackedScene = preload("res://scenes/wisp_spell.tscn")
+var greater_wisp_spell: PackedScene = preload("res://scenes/greater_wisp_spell.tscn")
 #Effects from Drops
 var ArcaneOrb: PackedScene = preload("res://scenes/arcane_orb.tscn")
 var ArcaneDash: PackedScene = preload("res://scenes/cards/arcane_dash.tscn")
@@ -54,6 +57,7 @@ var wolf_scene: PackedScene = preload("res://scenes/wolf.tscn") #Make sure endin
 var direWolf_scene: PackedScene = preload("res://scenes/direWolf.tscn")
 var ogre_scene: PackedScene = preload("res://scenes/ogre.tscn")
 var wisp_scene: PackedScene = preload("res://scenes/wisp.tscn")
+var greater_wisp_scene: PackedScene = preload("res://scenes/greater_wisp.tscn")
 #Item Scene
 var health_potion_scene: PackedScene = preload("res://scenes/items/HealthPotion.tscn")
 var arcane_orb_scene: PackedScene = preload("res://scenes/items/drop_arcane_orb.tscn")
@@ -126,14 +130,17 @@ func reset_values() -> void:
 	health_amount = 10 #current health of the player
 	max_health_amount = 20 #Maximum health, stats can increase this
 	Invulnerable = false
+	player_experience = 0
 	#Mob Variables
 	max_enemies_allowed = 500 #number of enemies allowed to be in the map / spawned
 	current_enemies_alive = 0 #number of enemies alive currently
 	#Spawn Rates: # represents % chance. VALUES MUST ALL ADD TO 100!
-	wolf_Spawn_Rate = 60 
-	dire_Spawn_Rate = 25
+	#55-20-1-15-9
+	wolf_Spawn_Rate = 55
+	dire_Spawn_Rate = 20
 	ogre_Spawn_Rate = 1
-	wisp_Spawn_Rate = 14
+	wisp_Spawn_Rate = 15
+	greater_wisp_Spawn_Rate = 9
 	arcaneDamageModifier = 1.00
 	elementalDamageModifier = 1.00
 	physicalDamageModifier = 1.00
