@@ -55,7 +55,6 @@ texture = ExtResource("2_6mily")
 sources/2 = SubResource("TileSetAtlasSource_rqhvp")
 
 [node name="map" type="Node2D"]
-position = Vector2(0, -2)
 script = ExtResource("1_bxlcr")
 
 [node name="Ground" type="Node2D" parent="."]
@@ -346,6 +345,5 @@ position = Vector2(282, 548)
 
 [node name="Speed" parent="Buff Container" instance=ExtResource("6_u43r8")]
 position = Vector2(454, 548)
+
 [connection signal="timeout" from="mobSpawnTimer" to="." method="_on_mob_spawn_timer_timeout"]
-
-

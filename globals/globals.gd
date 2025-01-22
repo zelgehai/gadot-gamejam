@@ -2,6 +2,7 @@ extends Node
 
 var canShoot = true
 
+var elapsed_time = 0
 #Player Variables
 var health_amount = 10 #current health of the player
 var max_health_amount = 20 #Maximum health, stats can increase this
@@ -52,10 +53,9 @@ var ogre_scene: PackedScene = preload("res://scenes/ogre.tscn")
 var health_potion_scene: PackedScene = preload("res://scenes/items/HealthPotion.tscn")
 var arcane_orb_scene: PackedScene = preload("res://scenes/items/drop_arcane_orb.tscn")
 
+#setting default values [this is important for restarting game after death]
+
 #Spawn Stuff
-#Mob Spawner
-func spawn_mob():
-	print("test")
 	
 #num1 = itemType num2 = percentage (out of 100) pos = the spawn location
 func spawn_item(num1: int, num2: int, pos: Vector2):
@@ -114,6 +114,25 @@ func spawnArcaneDash() -> void:
 #General Functions
 func damage_Player(dmg):
 	health_amount -= dmg
-
-
-#Type Modifiers Updates???
+	
+#This func is called in death_scene.gd, to reset player values for game restart
+func reset_values() -> void:
+	elapsed_time = 0
+	health_amount = 10 #current health of the player
+	max_health_amount = 20 #Maximum health, stats can increase this
+	Invulnerable = false
+	#Mob Variables
+	max_enemies_allowed = 500 #number of enemies allowed to be in the map / spawned
+	current_enemies_alive = 0 #number of enemies alive currently
+	#Spawn Rates: # represents % chance. VALUES MUST ALL ADD TO 100!
+	wolf_Spawn_Rate = 70 
+	dire_Spawn_Rate = 25
+	ogre_Spawn_Rate = 5
+	arcaneDamageModifier = 1.00
+	elementalDamageModifier = 1.00
+	physicalDamageModifier = 1.00
+	speedModifier = 1.00
+	MAX_arcaneDamageModifier = 1.00
+	MAX_elementalDamageModifier = 1.00
+	MAX_physicalDamageModifier = 1.00
+	MAX_speedModifier = 1.00
