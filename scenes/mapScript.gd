@@ -44,7 +44,7 @@ func _on_mob_spawn_timer_timeout() -> void:
 		#select random enemySpawner Location
 		var enemySpawnMarkers = $enemySpawners.get_children()
 		var selectedEnemyMarker = enemySpawnMarkers[randi() % enemySpawnMarkers.size()] #Randomly selects one of the markers
-		var mobType = randi() % 100 + 1 #Spawns Random mob type from 1-> 2   #1 is for wolf 2-direWolf 3- Ogre
+		var mobType = randi() % 100 + 1 #Spawns Random mob type 1-100 value based on GLobal #
 		#print(mobType) #Debug purposes
 		if mobType <= Globals.wolf_Spawn_Rate: 
 			var wolf = Globals.wolf_scene.instantiate()
@@ -61,3 +61,8 @@ func _on_mob_spawn_timer_timeout() -> void:
 			ogre.position = selectedEnemyMarker.global_position
 			ogre.player_node = $Player
 			$enemies.add_child(ogre)
+		if mobType > Globals.wolf_Spawn_Rate+Globals.dire_Spawn_Rate+Globals.ogre_Spawn_Rate and mobType <= Globals.wolf_Spawn_Rate+Globals.dire_Spawn_Rate+Globals.ogre_Spawn_Rate+Globals.wisp_Spawn_Rate:
+			var wisp = Globals.wisp_scene.instantiate()
+			wisp.position = selectedEnemyMarker.global_position
+			wisp.player_node = $Player
+			$enemies.add_child(wisp)
