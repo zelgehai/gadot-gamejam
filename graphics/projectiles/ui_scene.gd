@@ -12,3 +12,7 @@ func _ready() -> void:
 func update_health_amount():
 	health_label.text = "Health: " + str(Globals.health_amount)
 	health_bar.value = Globals.health_amount
+
+func update_expTracker(exp):
+	Globals.player_experience += exp
+	$expTracker/Label.text = "Exp= "+str(Globals.player_experience)

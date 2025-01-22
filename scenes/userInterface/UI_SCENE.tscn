@@ -63,4 +63,26 @@ autostart = true
 
 [node name="CardFrame" parent="." instance=ExtResource("6_ni0p0")]
 
+[node name="expTracker" type="VBoxContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.932
+anchor_top = 0.45
+anchor_right = 0.932
+anchor_bottom = 0.45
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="expTracker"]
+texture_filter = 1
+layout_mode = 2
+text = "Exp= 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="timeout" from="mapTimer/Timer" to="mapTimer" method="_on_timer_timeout"]

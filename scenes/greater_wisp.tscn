@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://5ka7168y14ir"]
+
+[ext_resource type="Script" path="res://scenes/greater_wisp.gd" id="1_kehkk"]
+[ext_resource type="Texture2D" uid="uid://bmci3rwkwa0vu" path="res://graphics/enemies/greater_wisp.png" id="2_xpj1l"]
+
+[node name="greater_wisp" type="CharacterBody2D"]
+texture_filter = 1
+scale = Vector2(6, 6)
+script = ExtResource("1_kehkk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_xpj1l")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-10.3333, 0, -2, -5, 0.833333, -5, 10.1667, 0, 1, 0, 1, 1, -2, 1, -2, 0)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-10.3333, 0, -2, -5, 0.833333, -5, 10.1667, 0, 1, 0, 1, 1, -2, 1, -2, 0)
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="shootSpellCooldown" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="shootSpellCooldown" to="." method="_on_shoot_spell_cooldown_timeout"]

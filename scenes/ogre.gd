@@ -4,11 +4,13 @@ var player_node: CharacterBody2D = null #reference to the player node
 var direction_to_player = Vector2(1,0)
 var speed = 200 #Max Speed of Ogre
 var randomized_speed = 1
+var is_dead = false
 
 var power = 10
 var itemType = 2#
 var dropChance = 100
 var health = 500
+var mob_experience = 5
 
 func _ready() -> void:
 	direction_to_player = (player_node.global_position - global_position).normalized()
@@ -25,11 +27,15 @@ func _process(_delta: float) -> void:
 		
 #calls this func if Ogre got hit
 func hit(dmg):
+	if is_dead:
+		return
+		
 	health -= dmg
 	if(health <= 0):
-		print('OGRE HAS died.')
+		is_dead = true
 		call_deferred("queue_free") #Deletes Direwolf when hit.
 		Globals.spawn_item(itemType, dropChance, position)
+		$"../../UI".update_expTracker(mob_experience)
 	
 
 

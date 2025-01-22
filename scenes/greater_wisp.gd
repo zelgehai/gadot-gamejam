@@ -3,14 +3,14 @@ var canDamage = true
 var canShoot = true
 var player_node: CharacterBody2D = null #reference to the player node
 var direction_to_player = Vector2(1,0)
-var speed = 60 #Max Speed of Wisp
+var speed = 40 #Max Speed of Wisp
 var randomized_speed = 1
 var is_dead = false
 
-var power = 1
+var power = 2
 var itemType = 4 #
 var dropChance = 100
-var health = 1
+var health = 10
 var mob_experience = 1
 
 func _ready() -> void:
@@ -37,7 +37,7 @@ func _process(_delta: float) -> void:
 		
 #calls this func if wisp got hit
 func hit(dmg):
-	if is_dead: #if already dead, don't do anything
+	if is_dead:
 		return
 		
 	health -= dmg
@@ -45,7 +45,7 @@ func hit(dmg):
 		is_dead = true
 		call_deferred("queue_free") #Deletes wolf when hit. Used
 		Globals.spawn_item(itemType, dropChance, position)
-		$"../../UI".update_expTracker(mob_experience) #Updates Player Exp + counter
+		$"../../UI".update_expTracker(mob_experience)
 	
 func _on_area_2d_body_entered(body) -> void:
 	if canDamage and !Globals.Invulnerable:
@@ -59,10 +59,10 @@ func shootPlayer() -> void:
 	if  canShoot == true:
 		canShoot = false
 		$shootSpellCooldown.start()
-		var wispAttack = Globals.wisp_Spell.instantiate() as Area2D
-		wispAttack.player_node = $"../../../map/Player"
-		wispAttack.wisp_node = $"."
-		$"../../../map/EnemyProjectiles".add_child(wispAttack)
+		var gwispAttack = Globals.greater_wisp_spell.instantiate() as Area2D
+		gwispAttack.player_node = $"../../../map/Player"
+		gwispAttack.wisp_node = $"."
+		$"../../../map/EnemyProjectiles".add_child(gwispAttack)
 
 func _on_timer_timeout() -> void:
 	canDamage = true

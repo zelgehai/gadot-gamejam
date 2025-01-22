@@ -11,7 +11,7 @@ var buffType = 1
 var modifierArcane = .3
 var modifierPhysical = .3
 var modifierElemental = .3
-var modifierSpeed = .6
+var modifierSpeed = .1
 var modifierHealth = 2
 
 #Node for Player

@@ -25,8 +25,8 @@ func _process(delta: float) -> void:
 func _on_body_entered(body):
 	if body.name != "Player": #can also use "if "hit" in body:"
 		if body.has_method("hit"):
-			print(damage*Globals.arcaneDamageModifier)
-			print(Globals.buffArcane)
+			#print(damage*Globals.arcaneDamageModifier)
+			#print(Globals.buffArcane)
 			body.hit(damage*Globals.arcaneDamageModifier)
 		queue_free()
 	
