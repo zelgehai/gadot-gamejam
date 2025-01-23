@@ -7,6 +7,9 @@ var player_node: CharacterBody2D = null
 #Type of Card
 var type = "Arcane"
 
+#Cooldown time for the spell
+var cooldown = 6
+
 #Damage Output
 var damage = 1
 
@@ -32,3 +35,6 @@ func _on_body_entered(body):
 	
 func _on_spell_duration_timeout() -> void:
 	queue_free()
+
+func getCooldown() -> int:
+	return cooldown

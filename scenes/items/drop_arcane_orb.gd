@@ -1,5 +1,11 @@
 extends Area2D
 
+#BuffType Map
+# 1 = Physical
+#2 = Elemental
+#3 = Arcane
+#4 = Speed
+#5 = Health
 var buffType = 1
 
 # Called when the node enters the scene tree for the first time.
@@ -8,7 +14,16 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	pass
+	if(buffType == 1):
+		$AnimatedSprite2D.animation = str(buffType)
+	if(buffType == 2):
+		$AnimatedSprite2D.animation = str(buffType)
+	if(buffType == 3):
+		$AnimatedSprite2D.animation = str(buffType)
+	if(buffType == 4):
+		$AnimatedSprite2D.animation = str(buffType)
+	if(buffType == 5):
+		$AnimatedSprite2D.animation = str(buffType)
 
 func _on_body_entered(_body: Node2D) -> void:
 	match buffType:

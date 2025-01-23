@@ -7,6 +7,9 @@ var player_node: CharacterBody2D = null
 #Type of Card
 var type = "Physical"
 
+#Cooldown time for the spell
+var cooldown = 1
+
 #Damage Output
 var damage = 3
 
@@ -33,3 +36,6 @@ func _on_body_exited(_body: Node2D) -> void:
 
 func _on_spell_duration_timeout() -> void:
 	queue_free()
+
+func getCooldown() -> int:
+	return cooldown

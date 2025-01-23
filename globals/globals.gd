@@ -1,11 +1,12 @@
 extends Node
 
-var canShoot = true
+#var  = true
 
 var elapsed_time = 0
 
-#Deck List?
-var cardList = [1, 2, 3, 4]
+#Deck List: Starts empty,can grow to any size, discard starts at zero gets bigger when discard
+var DECK_LIST: Array = []
+var DISCARD_LIST: Array = []
 
 #Player Variables
 var health_amount = 10 #current health of the player
@@ -89,7 +90,6 @@ func spawn_arcaneorb(pos: Vector2, type: int):
 	print("spawning Arcane Orb")
 
 func spawnMiniBolt() -> void:
-	canShoot = true
 	var MB = Globals.MiniBolt.instantiate() as Area2D
 	MB.player_node = $"../map/Player"
 	$"../map/Projectiles".add_child(MB)

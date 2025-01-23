@@ -1,0 +1,115 @@
+[gd_scene load_steps=9 format=3 uid="uid://datqd22ua8q0a"]
+
+[ext_resource type="Script" path="res://card_frame.gd" id="1_fu7e3"]
+[ext_resource type="Texture2D" uid="uid://csu1ovg1b1rjj" path="res://graphics/CardFrame.png" id="2_7svk5"]
+[ext_resource type="Texture2D" uid="uid://boi84n23go2xs" path="res://graphics/card_MiniBolt.png" id="3_u7iwj"]
+[ext_resource type="Texture2D" uid="uid://cm1nadkkinomg" path="res://graphics/Cooldown.png" id="4_e2uv2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_veoq3"]
+atlas = ExtResource("3_u7iwj")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bir6s"]
+atlas = ExtResource("3_u7iwj")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lg4w2"]
+atlas = ExtResource("3_u7iwj")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wqrbr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_veoq3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bir6s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lg4w2")
+}],
+"loop": true,
+"name": &"1",
+"speed": 5.0
+}]
+
+[node name="CardFrame" type="CanvasLayer"]
+scale = Vector2(6, 6)
+transform = Transform2D(6, 0, 0, 6, 0, 0)
+script = ExtResource("1_fu7e3")
+
+[node name="Slot 1" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(13, 15)
+texture = ExtResource("2_7svk5")
+
+[node name="Slot 2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(35, 15)
+texture = ExtResource("2_7svk5")
+
+[node name="Slot 3" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(57, 15)
+texture = ExtResource("2_7svk5")
+
+[node name="Slot 4" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(79, 15)
+texture = ExtResource("2_7svk5")
+
+[node name="CardImageList" type="Node2D" parent="."]
+
+[node name="Card1" type="AnimatedSprite2D" parent="CardImageList"]
+texture_filter = 1
+position = Vector2(13, 15)
+sprite_frames = SubResource("SpriteFrames_wqrbr")
+animation = &"1"
+autoplay = "1"
+frame_progress = 0.270014
+
+[node name="Card2" type="AnimatedSprite2D" parent="CardImageList"]
+texture_filter = 1
+position = Vector2(35, 15)
+sprite_frames = SubResource("SpriteFrames_wqrbr")
+animation = &"1"
+autoplay = "1"
+frame_progress = 0.270014
+
+[node name="Card3" type="AnimatedSprite2D" parent="CardImageList"]
+texture_filter = 1
+position = Vector2(57, 15)
+sprite_frames = SubResource("SpriteFrames_wqrbr")
+animation = &"1"
+autoplay = "1"
+frame_progress = 0.270014
+
+[node name="Card4" type="AnimatedSprite2D" parent="CardImageList"]
+texture_filter = 1
+position = Vector2(79, 15)
+sprite_frames = SubResource("SpriteFrames_wqrbr")
+animation = &"1"
+autoplay = "1"
+frame_progress = 0.270014
+
+[node name="cooldown1" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="cooldown2" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="cooldown3" type="Timer" parent="."]
+wait_time = 4.0
+
+[node name="cooldown4" type="Timer" parent="."]
+wait_time = 6.0
+
+[node name="cooldownOverLay1" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(13, 15)
+texture = ExtResource("4_e2uv2")
+
+[connection signal="timeout" from="cooldown1" to="." method="_on_cooldown_1_timeout"]
