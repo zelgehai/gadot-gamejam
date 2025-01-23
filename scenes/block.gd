@@ -8,6 +8,9 @@ var player_node: CharacterBody2D = null
 var point = null
 var rotation_speed = .1
 
+#Cooldown time for the spell
+var cooldown = 2
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	point = player_node.get_node("SelfPoint")
@@ -26,3 +29,6 @@ func _process(_delta: float) -> void:
 func _on_spell_duration_timeout() -> void:
 	Globals.Invulnerable = false
 	queue_free()
+
+func getCooldown() -> int:
+	return cooldown

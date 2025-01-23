@@ -1,5 +1,6 @@
 extends Node2D
 var spawningActive = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	print("Setting Player Starting Position:")
@@ -17,13 +18,14 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if(Input.is_action_just_pressed("mouseLeftClick") and !Input.is_action_just_pressed("SHFTLeftClick")):
-		Globals.spawnMiniBolt()
-	if(Input.is_action_pressed("mouseRightClick") and !Input.is_action_just_pressed("SHFTRightClick")):
-		Globals.spawnSlash()
+		#Globals.spawnMiniBolt()
+		$UI/CardFrame.playCard(0)
+	if(Input.is_action_just_pressed("mouseRightClick") and !Input.is_action_just_pressed("SHFTRightClick")):
+		$UI/CardFrame.playCard(1)
 	if(Input.is_action_just_pressed("SHFTRightClick")):
-		Globals.spawnKindleWall()
+		$UI/CardFrame.playCard(3)
 	if(Input.is_action_just_pressed("SHFTLeftClick")):
-		Globals.spawnBlock()
+		$UI/CardFrame.playCard(2)
 	if(Input.is_action_just_pressed("R_Pressed")):
 		Globals.spawnArcaneDash()
 	if(Input.is_action_just_pressed("ePressed")): #Press E to activate enemy spawning

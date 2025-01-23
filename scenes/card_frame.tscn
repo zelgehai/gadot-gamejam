@@ -1,8 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://datqd22ua8q0a"]
+[gd_scene load_steps=26 format=3 uid="uid://datqd22ua8q0a"]
 
 [ext_resource type="Script" path="res://card_frame.gd" id="1_fu7e3"]
 [ext_resource type="Texture2D" uid="uid://csu1ovg1b1rjj" path="res://graphics/CardFrame.png" id="2_7svk5"]
 [ext_resource type="Texture2D" uid="uid://boi84n23go2xs" path="res://graphics/card_MiniBolt.png" id="3_u7iwj"]
+[ext_resource type="Texture2D" uid="uid://cm1nadkkinomg" path="res://graphics/Cooldown.png" id="4_e2uv2"]
+[ext_resource type="Texture2D" uid="uid://bkusqkrxpqbqp" path="res://graphics/card_Slash.png" id="4_jq0vt"]
+[ext_resource type="Texture2D" uid="uid://dhxlquwb8xy83" path="res://graphics/card_Block.png" id="4_q166e"]
+[ext_resource type="Texture2D" uid="uid://cxmd8r4bnd8mo" path="res://graphics/card_KindleWall.png" id="5_gtks1"]
+[ext_resource type="Texture2D" uid="uid://vsmjrf2yeejd" path="res://graphics/leftClick.png" id="8_8p832"]
+[ext_resource type="Texture2D" uid="uid://b6p8mhttwy3ev" path="res://graphics/rightClick.png" id="9_jf6m5"]
+[ext_resource type="Texture2D" uid="uid://ddclbb4nha7kn" path="res://graphics/shftLeftClick.png" id="10_8wb61"]
+[ext_resource type="Texture2D" uid="uid://b3v0hcq1wigx0" path="res://graphics/shftRightClick.png" id="11_fme3h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_veoq3"]
 atlas = ExtResource("3_u7iwj")
@@ -14,6 +22,46 @@ region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lg4w2"]
 atlas = ExtResource("3_u7iwj")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlfl2"]
+atlas = ExtResource("4_jq0vt")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_or0nt"]
+atlas = ExtResource("4_jq0vt")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_01kja"]
+atlas = ExtResource("4_jq0vt")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1yf4s"]
+atlas = ExtResource("4_q166e")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmpus"]
+atlas = ExtResource("4_q166e")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gsd6u"]
+atlas = ExtResource("4_q166e")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7auco"]
+atlas = ExtResource("4_q166e")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kfti1"]
+atlas = ExtResource("5_gtks1")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7hta"]
+atlas = ExtResource("5_gtks1")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_35sxh"]
+atlas = ExtResource("5_gtks1")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wqrbr"]
@@ -30,6 +78,51 @@ animations = [{
 }],
 "loop": true,
 "name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlfl2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_or0nt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_01kja")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1yf4s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vmpus")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gsd6u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7auco")
+}],
+"loop": true,
+"name": &"3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kfti1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q7hta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_35sxh")
+}],
+"loop": true,
+"name": &"4",
 "speed": 5.0
 }]
 
@@ -64,17 +157,15 @@ texture = ExtResource("2_7svk5")
 texture_filter = 1
 position = Vector2(13, 15)
 sprite_frames = SubResource("SpriteFrames_wqrbr")
-animation = &"1"
+animation = &"4"
 autoplay = "1"
-frame_progress = 0.270014
 
 [node name="Card2" type="AnimatedSprite2D" parent="CardImageList"]
 texture_filter = 1
 position = Vector2(35, 15)
 sprite_frames = SubResource("SpriteFrames_wqrbr")
-animation = &"1"
+animation = &"4"
 autoplay = "1"
-frame_progress = 0.270014
 
 [node name="Card3" type="AnimatedSprite2D" parent="CardImageList"]
 texture_filter = 1
@@ -91,3 +182,72 @@ sprite_frames = SubResource("SpriteFrames_wqrbr")
 animation = &"1"
 autoplay = "1"
 frame_progress = 0.270014
+
+[node name="cooldown1" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="cooldown2" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="cooldown3" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[node name="cooldown4" type="Timer" parent="."]
+wait_time = 6.0
+one_shot = true
+
+[node name="cooldownOverLay1" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(13, 15)
+texture = ExtResource("4_e2uv2")
+
+[node name="cooldownOverLay2" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(35, 15)
+texture = ExtResource("4_e2uv2")
+
+[node name="cooldownOverLay3" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(57, 15)
+texture = ExtResource("4_e2uv2")
+
+[node name="cooldownOverLay4" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(79, 15)
+texture = ExtResource("4_e2uv2")
+
+[node name="LeftClick" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(13, 31)
+scale = Vector2(0.645833, 0.645833)
+texture = ExtResource("8_8p832")
+
+[node name="LeftClick2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(35, 31)
+scale = Vector2(0.645833, 0.645833)
+texture = ExtResource("9_jf6m5")
+
+[node name="LeftClick3" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(57, 34)
+scale = Vector2(0.645833, 0.645833)
+texture = ExtResource("10_8wb61")
+
+[node name="LeftClick4" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(79, 34)
+scale = Vector2(0.645833, 0.645833)
+texture = ExtResource("11_fme3h")
+
+[connection signal="timeout" from="cooldown1" to="." method="_on_cooldown_1_timeout"]
+[connection signal="timeout" from="cooldown2" to="." method="_on_cooldown_2_timeout"]
+[connection signal="timeout" from="cooldown3" to="." method="_on_cooldown_3_timeout"]
+[connection signal="timeout" from="cooldown4" to="." method="_on_cooldown_4_timeout"]

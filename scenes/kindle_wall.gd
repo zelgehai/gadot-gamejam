@@ -8,6 +8,9 @@ var player_node: CharacterBody2D = null
 
 var damage = 10
 
+#Cooldown time for the spell
+var cooldown = 3
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var point = player_node.get_node("CastPoint")
@@ -29,3 +32,6 @@ func _on_body_exited(_body: Node2D) -> void:
 
 func _on_spell_duration_timeout() -> void:
 	queue_free()
+
+func getCooldown() -> int:
+	return cooldown

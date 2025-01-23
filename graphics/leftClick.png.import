@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dswhurye0h86o"
-path="res://.godot/imported/DropArcaneOrb.png-b5302bf8f710583ada67b6a52d8c6551.ctex"
+uid="uid://vsmjrf2yeejd"
+path="res://.godot/imported/leftClick.png-e4ca64200a28445f886db9be0c956398.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/items/DropArcaneOrb.png"
-dest_files=["res://.godot/imported/DropArcaneOrb.png-b5302bf8f710583ada67b6a52d8c6551.ctex"]
+source_file="res://graphics/leftClick.png"
+dest_files=["res://.godot/imported/leftClick.png-e4ca64200a28445f886db9be0c956398.ctex"]
 
 [params]
 
