@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://og4y1hip2a12"]
+
+[ext_resource type="Script" path="res://graphics/projectiles/rock_spell.gd" id="1_3x5ch"]
+[ext_resource type="Texture2D" uid="uid://v503cou5051y" path="res://graphics/projectiles/rock_spell.png" id="2_ql60r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_flqkq"]
+atlas = ExtResource("2_ql60r")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nd7e1"]
+atlas = ExtResource("2_ql60r")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8i72m"]
+atlas = ExtResource("2_ql60r")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_134mh"]
+atlas = ExtResource("2_ql60r")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_814yo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flqkq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nd7e1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8i72m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_134mh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_miw8w"]
+radius = 7.07107
+
+[node name="rock_spell" type="Area2D"]
+texture_filter = 1
+scale = Vector2(10, 10)
+script = ExtResource("1_3x5ch")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_814yo")
+autoplay = "default"
+frame_progress = 0.775288
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_miw8w")
+
+[node name="spellDuration" type="Timer" parent="."]
+wait_time = 8.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="spellDuration" to="." method="_on_spell_duration_timeout"]

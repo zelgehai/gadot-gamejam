@@ -19,11 +19,15 @@ var max_enemies_allowed = 500 #number of enemies allowed to be in the map / spaw
 var current_enemies_alive = 0 #number of enemies alive currently
 
 #Spawn Rates: # represents % chance. VALUES MUST ALL ADD TO 100!
-var wolf_Spawn_Rate = 55 #55-20-1-15-9
-var dire_Spawn_Rate = 20
+var wolf_Spawn_Rate = 40 	#40 10 1 10 5 10 8 15 1
+var dire_Spawn_Rate = 10
 var ogre_Spawn_Rate = 1
-var wisp_Spawn_Rate = 15
-var greater_wisp_Spawn_Rate = 9
+var wisp_Spawn_Rate = 10
+var greater_wisp_Spawn_Rate = 5
+var bombrat_Spawn_Rate = 10
+var raven_Spawn_Rate = 8
+var bigSlime_Spawn_Rate = 15
+var rockGiant_Spawn_Rate = 1
 
 #Type Modifiers
 var arcaneDamageModifier = 1.00
@@ -49,6 +53,8 @@ var Block: PackedScene = preload("res://scenes/cards/block.tscn")
 var KindleWall: PackedScene = preload("res://scenes/cards/kindle_wall.tscn")
 var wisp_Spell: PackedScene = preload("res://scenes/wisp_spell.tscn")
 var greater_wisp_spell: PackedScene = preload("res://scenes/greater_wisp_spell.tscn")
+var ratBomb_Spell: PackedScene = preload("res://graphics/projectiles/bomb.tscn")
+var rock_spell: PackedScene = preload("res://graphics/projectiles/rock_spell.tscn")
 #Effects from Drops
 var ArcaneOrb: PackedScene = preload("res://scenes/cards/arcane_orb.tscn")
 var ArcaneDash: PackedScene = preload("res://scenes/cards/arcane_dash.tscn")
@@ -59,6 +65,11 @@ var direWolf_scene: PackedScene = preload("res://scenes/enemies/direWolf.tscn")
 var ogre_scene: PackedScene = preload("res://scenes/enemies/ogre.tscn")
 var wisp_scene: PackedScene = preload("res://scenes/enemies/wisp.tscn")
 var greater_wisp_scene: PackedScene = preload("res://scenes/enemies/greater_wisp.tscn")
+var bombrat_scene: PackedScene = preload("res://scenes/enemies/bomb_rat.tscn")
+var raven_scene: PackedScene = preload("res://scenes/enemies/raven.tscn")
+var bigSlime_scene: PackedScene = preload("res://scenes/enemies/big_slime.tscn")
+var smallSlime_scene: PackedScene = preload("res://scenes/enemies/small_slime.tscn")
+var rockGiant_scene: PackedScene = preload("res://scenes/enemies/rock_giant.tscn")
 #Item Scene
 var health_potion_scene: PackedScene = preload("res://scenes/items/HealthPotion.tscn")
 var arcane_orb_scene: PackedScene = preload("res://scenes/items/drop_arcane_orb.tscn")
@@ -135,12 +146,16 @@ func reset_values() -> void:
 	max_enemies_allowed = 500 #number of enemies allowed to be in the map / spawned
 	current_enemies_alive = 0 #number of enemies alive currently
 	#Spawn Rates: # represents % chance. VALUES MUST ALL ADD TO 100!
-	#55-20-1-15-9
-	wolf_Spawn_Rate = 55
-	dire_Spawn_Rate = 20
+	wolf_Spawn_Rate = 40 
+	dire_Spawn_Rate = 10
 	ogre_Spawn_Rate = 1
-	wisp_Spawn_Rate = 15
-	greater_wisp_Spawn_Rate = 9
+	wisp_Spawn_Rate = 10
+	greater_wisp_Spawn_Rate = 5
+	bombrat_Spawn_Rate = 10
+	raven_Spawn_Rate = 8
+	bigSlime_Spawn_Rate = 15
+	rockGiant_Spawn_Rate = 1
+	#Spell Modifiers
 	arcaneDamageModifier = 1.00
 	elementalDamageModifier = 1.00
 	physicalDamageModifier = 1.00

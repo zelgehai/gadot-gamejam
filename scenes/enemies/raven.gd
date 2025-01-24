@@ -2,19 +2,19 @@ extends CharacterBody2D
 var canDamage = true
 var player_node: CharacterBody2D = null #reference to the player node
 var direction_to_player = Vector2(1,0)
-var speed = 120 #Max Speed of Ogre
+var speed = 120 #Min Speed of raven
 var randomized_speed = 1
 var is_dead = false
 
-var power = 5
+var power = 1
 var itemType = 2#
-var dropChance = 90 #Almost Guarantee Drop Chance
-var health = 500
-var mob_experience = 5
+var dropChance = 1
+var health = 1
+var mob_experience = 1
 
 func _ready() -> void:
 	direction_to_player = (player_node.global_position - global_position).normalized()
-	randomized_speed = (randi() % 250 + speed) # Random num from speed -> 500
+	randomized_speed = (randi() % 350 + speed) # Random num from speed -> 500
 	
 func _process(_delta: float) -> void:
 	#if player_node:
@@ -25,7 +25,7 @@ func _process(_delta: float) -> void:
 		look_at(player_node.global_position)
 		rotation += deg_to_rad(90)
 		
-#calls this func if Ogre got hit
+#calls this func if raven got hit
 func hit(dmg):
 	if is_dead:
 		return
@@ -33,10 +33,9 @@ func hit(dmg):
 	health -= dmg
 	if(health <= 0):
 		is_dead = true
-		call_deferred("queue_free") #Deletes Direwolf when hit.
+		call_deferred("queue_free") #Deletes Direwolf when hit. Used
 		Globals.spawn_item(itemType, dropChance, position)
 		$"../../UI".update_expTracker(mob_experience)
-	
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
@@ -46,7 +45,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 			body.player_hit()
 		canDamage = false
 		$Timer.start()
-
 
 func _on_timer_timeout() -> void:
 	canDamage = true
