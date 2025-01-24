@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bru7bw8mqa672"]
+[gd_scene load_steps=20 format=3 uid="uid://bru7bw8mqa672"]
 
 [ext_resource type="Script" path="res://scenes/mapScript.gd" id="1_bxlcr"]
 [ext_resource type="Texture2D" uid="uid://bei3tkq50cond" path="res://graphics/terrain/forestBorder.png" id="2_6mily"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://ikxnhdmdkjou" path="res://scenes/terrain/animated_tree.tscn" id="6_l3ewc"]
 [ext_resource type="PackedScene" uid="uid://4l51mcl3o5id" path="res://scenes/items/drop_arcane_orb.tscn" id="6_u43r8"]
 [ext_resource type="PackedScene" uid="uid://coriq1ssk7wb5" path="res://scenes/terrain/animated_bush.tscn" id="7_y5umk"]
+[ext_resource type="PackedScene" uid="uid://dopikq5lg8my0" path="res://scenes/level_up_screen.tscn" id="12_nx6yq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ek0rm"]
 texture = ExtResource("4_qdluy")
@@ -620,6 +621,9 @@ autostart = true
 [node name="miniBoltTimer" type="Timer" parent="."]
 wait_time = 0.5
 autostart = true
+
+[node name="LevelUpScreen" parent="." instance=ExtResource("12_nx6yq")]
+visible = false
 
 [connection signal="timeout" from="mobSpawnTimer" to="." method="_on_mob_spawn_timer_timeout"]
 [connection signal="timeout" from="TimeWhenSpawnRateIncreases" to="." method="_on_time_when_spawn_rate_increases_timeout"]

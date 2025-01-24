@@ -35,8 +35,9 @@ func hit(dmg):
 		is_dead = true #Marks as dead to prevent duplicate logic
 		#print('wolf died.')
 		call_deferred("queue_free") #Deletes wolf when hit. Used
+		$"../../UI".update_expTracker(mob_experience) 
 		Globals.spawn_item(itemType, dropChance, position)
-		$"../../UI".update_expTracker(mob_experience) #updates Player Exp
+		#updates Player Exp
 	
 func _on_area_2d_body_entered(body) -> void:
 	if canDamage and !Globals.Invulnerable:
