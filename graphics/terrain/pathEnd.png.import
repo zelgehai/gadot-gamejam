@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clmb25n0lhdiu"
-path="res://.godot/imported/New_Piskel_28.png-009f7f5136c3f6c9095d8dc717c65ae0.ctex"
+uid="uid://cb4t5mpvc1ah1"
+path="res://.godot/imported/pathEnd.png-87efb27d51883407f2fa9a315e54e109.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/terrain/New_Piskel_28.png"
-dest_files=["res://.godot/imported/New_Piskel_28.png-009f7f5136c3f6c9095d8dc717c65ae0.ctex"]
+source_file="res://graphics/terrain/pathEnd.png"
+dest_files=["res://.godot/imported/pathEnd.png-87efb27d51883407f2fa9a315e54e109.ctex"]
 
 [params]
 
