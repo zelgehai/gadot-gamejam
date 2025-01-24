@@ -6,6 +6,7 @@
 font_size = 64
 
 [node name="deathScene" type="Control"]
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,28 +16,43 @@ grow_vertical = 2
 script = ExtResource("1_cauy6")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_right = 1280.0
-offset_bottom = 719.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.603476, 0.0560532, 0.210032, 1)
 
 [node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 421.0
-offset_top = 148.0
-offset_right = 873.0
-offset_bottom = 321.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.15
+anchor_right = 0.5
+anchor_bottom = 0.15
+offset_left = -242.0
+offset_right = 242.0
+offset_bottom = 173.0
+grow_horizontal = 2
 text = "YOU HAVE DIED"
 label_settings = SubResource("LabelSettings_rluhw")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 554.0
-offset_top = 446.0
-offset_right = 759.0
-offset_bottom = 544.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -102.5
+offset_top = -49.0
+offset_right = 102.5
+offset_bottom = 49.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "Play Again?"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -9,9 +9,9 @@ var is_dead = false
 
 var power = 1
 var itemType = 4 #
-var dropChance = 100
+var dropChance = 2 
 var health = 1
-var mob_experience = 1
+var mob_experience = 2
 
 func _ready() -> void:
 	direction_to_player = (player_node.global_position - global_position).normalized()

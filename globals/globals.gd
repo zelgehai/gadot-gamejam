@@ -10,7 +10,7 @@ var DISCARD_LIST: Array = []
 
 #Player Variables
 var health_amount = 10 #current health of the player
-var max_health_amount = 20 #Maximum health, stats can increase this
+var max_health_amount = 10 #Should be the same as Starting Health, Game level Stats Increase this
 var Invulnerable = false
 var player_experience = 0
 
@@ -43,22 +43,22 @@ var buffPhysical = false
 var buffSpeed = false
 
 #Packed Scenes
-var MiniBolt: PackedScene = preload("res://scenes/MiniBolt.tscn")
-var Slash: PackedScene = preload("res://scenes/slash.tscn")
-var Block: PackedScene = preload("res://scenes/block.tscn")
-var KindleWall: PackedScene = preload("res://scenes/kindle_wall.tscn")
+var MiniBolt: PackedScene = preload("res://scenes/cards/MiniBolt.tscn")
+var Slash: PackedScene = preload("res://scenes/cards/slash.tscn")
+var Block: PackedScene = preload("res://scenes/cards/block.tscn")
+var KindleWall: PackedScene = preload("res://scenes/cards/kindle_wall.tscn")
 var wisp_Spell: PackedScene = preload("res://scenes/wisp_spell.tscn")
 var greater_wisp_spell: PackedScene = preload("res://scenes/greater_wisp_spell.tscn")
 #Effects from Drops
-var ArcaneOrb: PackedScene = preload("res://scenes/arcane_orb.tscn")
+var ArcaneOrb: PackedScene = preload("res://scenes/cards/arcane_orb.tscn")
 var ArcaneDash: PackedScene = preload("res://scenes/cards/arcane_dash.tscn")
 
 #Enemy Scenes
-var wolf_scene: PackedScene = preload("res://scenes/wolf.tscn") #Make sure ending is .tscn
-var direWolf_scene: PackedScene = preload("res://scenes/direWolf.tscn")
-var ogre_scene: PackedScene = preload("res://scenes/ogre.tscn")
-var wisp_scene: PackedScene = preload("res://scenes/wisp.tscn")
-var greater_wisp_scene: PackedScene = preload("res://scenes/greater_wisp.tscn")
+var wolf_scene: PackedScene = preload("res://scenes/enemies/wolf.tscn") #Make sure ending is .tscn
+var direWolf_scene: PackedScene = preload("res://scenes/enemies/direWolf.tscn")
+var ogre_scene: PackedScene = preload("res://scenes/enemies/ogre.tscn")
+var wisp_scene: PackedScene = preload("res://scenes/enemies/wisp.tscn")
+var greater_wisp_scene: PackedScene = preload("res://scenes/enemies/greater_wisp.tscn")
 #Item Scene
 var health_potion_scene: PackedScene = preload("res://scenes/items/HealthPotion.tscn")
 var arcane_orb_scene: PackedScene = preload("res://scenes/items/drop_arcane_orb.tscn")
