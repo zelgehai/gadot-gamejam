@@ -15,6 +15,11 @@ var health_amount = 10 #current health of the player
 var max_health_amount = 10 #Should be the same as Starting Health, Game level Stats Increase this
 var Invulnerable = false
 var player_experience = 0
+var player_level = 0
+
+#Level Up Map
+var experienceNeeded = 1
+var experienceGrowthRate = 1.5
 
 #Mob Variables
 var max_enemies_allowed = 500 #number of enemies allowed to be in the map / spawned
