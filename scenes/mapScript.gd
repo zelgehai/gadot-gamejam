@@ -81,5 +81,5 @@ func _on_time_when_spawn_rate_increases_timeout() -> void:
 	if $mobSpawnTimer.wait_time <= max_spawnrate:
 		return
 	else:
-		$mobSpawnTimer.wait_time -= 0.1
+		$mobSpawnTimer.wait_time *= 0.89 #Increase Spawn rate by 11% Every Timeout [20 seconds]
 		print("increassing spawn rate to:", $mobSpawnTimer.wait_time)
