@@ -7,7 +7,8 @@ func _ready() -> void:
 	$Player.position.x = 1000
 	$Player.position.y = 700
 	$UI.update_health_amount()
-	
+	#SetStarting Attack speed
+	$miniBoltTimer.wait_time = Globals.attackSpeed
 	#To test the integrity of the drop
 	$"Buff Container/Physical".buffType = 1
 	$"Buff Container/Elemental".buffType = 2
@@ -17,8 +18,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	
 	if(Input.is_action_just_pressed("mouseLeftClick") and !Input.is_action_just_pressed("SHFTLeftClick")):
-		#Globals.spawnMiniBolt()
 		$UI/CardFrame.playCard(0)
 	if(Input.is_action_just_pressed("mouseRightClick") and !Input.is_action_just_pressed("SHFTRightClick")):
 		$UI/CardFrame.playCard(1)
