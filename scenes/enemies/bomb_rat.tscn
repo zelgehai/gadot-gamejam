@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://cl85fqk6hs7u2"]
+
+[ext_resource type="Script" path="res://scenes/enemies/bomb_rat.gd" id="1_5swhc"]
+[ext_resource type="Texture2D" uid="uid://bhpt3t3kmheqf" path="res://graphics/enemies/BombRat.png" id="2_bayiq"]
+
+[node name="BombRat" type="CharacterBody2D"]
+texture_filter = 1
+scale = Vector2(4, 4)
+script = ExtResource("1_5swhc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1.8, -7.99361e-15)
+rotation = 1.5708
+texture = ExtResource("2_bayiq")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-1.2, -12.8, 0.8, -12.8, 0.8, -11.2, 1.8, -11, 1.8, -8.4, 2.8, -8.2, 2.8, -4.2, 4, -4.2, 4.2, 1, 2.8, 1.2, 2.8, 4, 2.8, 6.8, 4.8, 9.2, 4.8, 12, 4, 13, -1.2, 13, -1.2, 6.8, -2.4, 6.8, -4.2, 0.8, -4.2, -4)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-1.2, -12.8, 0.8, -12.8, 0.8, -11.2, 1.8, -11, 1.8, -8.4, 2.8, -8.2, 2.8, -4.2, 4, -4.2, 4.2, 1, 2.8, 1.2, 2.8, 4, 2.8, 6.8, 4.8, 9.2, 4.8, 12, 4, 13, -1.2, 13, -1.2, 6.8, -2.4, 6.8, -4.2, 0.8, -4.2, -4)
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

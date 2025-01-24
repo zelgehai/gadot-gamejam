@@ -593,7 +593,7 @@ position = Vector2(4000, 4500)
 position = Vector2(4500, 4500)
 
 [node name="mobSpawnTimer" type="Timer" parent="."]
-wait_time = 4.0
+wait_time = 3.0
 autostart = true
 
 [node name="Buff Container" type="Node2D" parent="."]
@@ -617,5 +617,10 @@ position = Vector2(454, 548)
 wait_time = 20.0
 autostart = true
 
+[node name="miniBoltTimer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
 [connection signal="timeout" from="mobSpawnTimer" to="." method="_on_mob_spawn_timer_timeout"]
 [connection signal="timeout" from="TimeWhenSpawnRateIncreases" to="." method="_on_time_when_spawn_rate_increases_timeout"]
+[connection signal="timeout" from="miniBoltTimer" to="." method="_on_mini_bolt_timer_timeout"]

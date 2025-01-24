@@ -74,6 +74,26 @@ func _on_mob_spawn_timer_timeout() -> void:
 			gwisp.position = selectedEnemyMarker.global_position
 			gwisp.player_node = $Player
 			$enemies.add_child(gwisp)
+		if mobType > Globals.wolf_Spawn_Rate+Globals.dire_Spawn_Rate+Globals.ogre_Spawn_Rate+Globals.wisp_Spawn_Rate+Globals.greater_wisp_Spawn_Rate and mobType <= Globals.bombrat_Spawn_Rate+Globals.wolf_Spawn_Rate+Globals.dire_Spawn_Rate+Globals.ogre_Spawn_Rate+Globals.wisp_Spawn_Rate+Globals.greater_wisp_Spawn_Rate:
+			var bombRat = Globals.bombrat_scene.instantiate()
+			bombRat.position = selectedEnemyMarker.global_position
+			bombRat.player_node = $Player
+			$enemies.add_child(bombRat)
+		if mobType > Globals.bombrat_Spawn_Rate+Globals.wolf_Spawn_Rate+Globals.dire_Spawn_Rate+Globals.ogre_Spawn_Rate+Globals.wisp_Spawn_Rate+Globals.greater_wisp_Spawn_Rate and mobType <= Globals.raven_Spawn_Rate+Globals.bombrat_Spawn_Rate+Globals.wolf_Spawn_Rate+Globals.dire_Spawn_Rate+Globals.ogre_Spawn_Rate+Globals.wisp_Spawn_Rate+Globals.greater_wisp_Spawn_Rate:
+			var raven = Globals.raven_scene.instantiate()
+			raven.position = selectedEnemyMarker.global_position
+			raven.player_node = $Player
+			$enemies.add_child(raven)
+		if mobType > Globals.raven_Spawn_Rate+Globals.bombrat_Spawn_Rate+Globals.wolf_Spawn_Rate+Globals.dire_Spawn_Rate+Globals.ogre_Spawn_Rate+Globals.wisp_Spawn_Rate+Globals.greater_wisp_Spawn_Rate and mobType <= Globals.bigSlime_Spawn_Rate+Globals.raven_Spawn_Rate+Globals.bombrat_Spawn_Rate+Globals.wolf_Spawn_Rate+Globals.dire_Spawn_Rate+Globals.ogre_Spawn_Rate+Globals.wisp_Spawn_Rate+Globals.greater_wisp_Spawn_Rate:
+			var bigSlime = Globals.bigSlime_scene.instantiate()
+			bigSlime.position = selectedEnemyMarker.global_position
+			bigSlime.player_node = $Player
+			$enemies.add_child(bigSlime)
+		if mobType > Globals.bigSlime_Spawn_Rate+Globals.raven_Spawn_Rate+Globals.bombrat_Spawn_Rate+Globals.wolf_Spawn_Rate+Globals.dire_Spawn_Rate+Globals.ogre_Spawn_Rate+Globals.wisp_Spawn_Rate+Globals.greater_wisp_Spawn_Rate and mobType <= +Globals.rockGiant_Spawn_Rate+ Globals.bigSlime_Spawn_Rate+Globals.raven_Spawn_Rate+Globals.bombrat_Spawn_Rate+Globals.wolf_Spawn_Rate+Globals.dire_Spawn_Rate+Globals.ogre_Spawn_Rate+Globals.wisp_Spawn_Rate+Globals.greater_wisp_Spawn_Rate:
+			var rockGiant = Globals.rockGiant_scene.instantiate()
+			rockGiant.position = selectedEnemyMarker.global_position
+			rockGiant.player_node = $Player
+			$enemies.add_child(rockGiant)
 
 
 func _on_time_when_spawn_rate_increases_timeout() -> void:
@@ -83,3 +103,7 @@ func _on_time_when_spawn_rate_increases_timeout() -> void:
 	else:
 		$mobSpawnTimer.wait_time *= 0.89 #Increase Spawn rate by 11% Every Timeout [20 seconds]
 		print("increassing spawn rate to:", $mobSpawnTimer.wait_time)
+
+
+func _on_mini_bolt_timer_timeout() -> void:
+	Globals.spawnMiniBolt()
