@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://coriq1ssk7wb5"]
+
+[ext_resource type="Texture2D" uid="uid://dgt063bcv144h" path="res://graphics/terrain/animatedBush.png" id="1_1e0nq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hhbfk"]
+atlas = ExtResource("1_1e0nq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u10ec"]
+atlas = ExtResource("1_1e0nq")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iuwdy"]
+atlas = ExtResource("1_1e0nq")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oluiu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hhbfk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u10ec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iuwdy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="animatedBush" type="StaticBody2D"]
+texture_filter = 1
+scale = Vector2(4, 4)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_oluiu")
+autoplay = "default"
+frame_progress = 0.110388
