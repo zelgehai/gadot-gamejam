@@ -1,8 +1,10 @@
 extends Node
 
 #var  = true
-
 var elapsed_time = 0
+
+#AutoAttack timer modifier
+var attackSpeed: float = .75
 
 #Deck List: Starts empty,can grow to any size, discard starts at zero gets bigger when discard
 var DECK_LIST: Array = []
@@ -123,6 +125,10 @@ func spawnArcaneDash() -> void:
 #General Functions
 func damage_Player(dmg):
 	health_amount -= dmg
+	
+func updateAttackSpeed(value: float) -> void:
+	attackSpeed += value
+	$"../map/miniBoltTimer".wait_time = attackSpeed
 	
 #This func is called in death_scene.gd, to reset player values for game restart
 func reset_values() -> void:

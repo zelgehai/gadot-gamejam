@@ -49,7 +49,16 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	$cooldownOverLay1.value = 100*($cooldown1.time_left/$cooldown1.wait_time)
+	
+	if(!$cooldown1.is_stopped()):
+		$cooldownOverLay1.value = 100*($cooldown1.time_left/$cooldown1.wait_time)
+	if(!$cooldown2.is_stopped()):
+		$cooldownOverLay2.value = 100*($cooldown2.time_left/$cooldown2.wait_time)
+	if(!$cooldown3.is_stopped()):
+		$cooldownOverLay3.value = 100*($cooldown3.time_left/$cooldown3.wait_time)
+	if(!$cooldown4.is_stopped()):
+		$cooldownOverLay4.value = 100*($cooldown4.time_left/$cooldown4.wait_time)
+		
 	if(!$cooldown1.is_stopped()):
 		$cooldownOverLay1.visible = true
 	else:
