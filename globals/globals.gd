@@ -4,7 +4,7 @@ extends Node
 var elapsed_time = 0
 
 #AutoAttack timer modifier
-var attackSpeed: float = .75
+var attackSpeed: float = .25
 
 #Deck List: Starts empty,can grow to any size, discard starts at zero gets bigger when discard
 var DECK_LIST: Array = []

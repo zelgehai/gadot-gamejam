@@ -8,8 +8,8 @@ var randomized_speed = 1
 var is_dead = false #Flag to prevent duplicate death logic
 
 var power = 1
-var itemType = 4#
-var dropChance = 2
+var itemType = 6#
+var dropChance = 100
 var health = 2
 var mob_experience = 1
 

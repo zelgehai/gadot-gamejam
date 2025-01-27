@@ -37,7 +37,11 @@ func _ready() -> void:
 		$AnimatedSprite2D.animation = "9"
 		$spellDuration.wait_time = 1
 	if(buffType == 6):
-		$AnimatedSprite2D.animation = "9"
+		$AnimatedSprite2D.animation = "10"
+		$spellDuration.wait_time = 1
+	if(buffType == 7):
+		$AnimatedSprite2D.animation = "11"
+		$spellDuration.wait_time = 1
 	$spellDuration.start()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -84,11 +88,13 @@ func selectBuffType(type: int) -> void:
 		5:#Health Buff
 			Globals.health_amount = Globals.health_amount + 5
 			$"../../UI".update_health_amount()
-		6:
+		6:#Add Card
 			#print("ADD CARD SCENE")
 			$"../../UI".addCardScreen()
 			#if(Globals.health_amount > Globals.max_health_amount):
 				#Globals.health_amount = Globals.max_health_amount
+		7:#Level Up
+			pass
 	
 func _on_spell_duration_timeout() -> void:
 	match buffType:
@@ -115,5 +121,7 @@ func _on_spell_duration_timeout() -> void:
 		5:#Remove Health Buff (pass, No Animation)
 			pass
 		6: 
+			pass
+		7:
 			pass
 	queue_free()
