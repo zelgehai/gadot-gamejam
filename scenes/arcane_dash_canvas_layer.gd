@@ -6,7 +6,7 @@ var progress_bars = ["$HContainer/bar1", "$HContainer/bar2", "$HContainer/bar3",
 
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if(!$cd1.is_stopped()):
 		$HContainer/bar1.value = 100*($cd1.time_left/$cd1.wait_time)
 	if(!$cd2.is_stopped()):

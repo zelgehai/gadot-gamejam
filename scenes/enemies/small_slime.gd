@@ -23,7 +23,6 @@ func _process(_delta: float) -> void:
 		#get directions towards the player [ to know to face it]
 		direction_to_player = (player_node.global_position - global_position).normalized()
 		#Calculate Distance to player
-		var distance_to_player = global_position.distance_to(player_node.global_position)
 		velocity = direction_to_player * randomized_speed #moves toward player
 		move_and_slide()
 		#always look at player

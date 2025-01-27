@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://c4lh370gb7lt5"]
+[gd_scene load_steps=4 format=3 uid="uid://c4lh370gb7lt5"]
 
 [ext_resource type="Script" path="res://scenes/add_points.gd" id="1_xs0sp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_own47"]
+font_size = 20
+font_color = Color(0.0228247, 0.0493142, 0.113593, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_45a2i"]
+font_size = 20
+font_color = Color(1, 0.145098, 1, 1)
 
 [node name="AddPoints" type="CanvasLayer"]
 process_mode = 2
@@ -91,3 +99,197 @@ text = "Physical Damage: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
+
+[node name="Stats" type="GridContainer" parent="."]
+anchors_preset = -1
+anchor_top = 0.2
+anchor_bottom = 0.205
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 2
+
+[node name="health" type="Label" parent="Stats"]
+custom_minimum_size = Vector2(150, 25)
+layout_mode = 2
+text = "Health: 10"
+label_settings = SubResource("LabelSettings_own47")
+
+[node name="health_button" type="Button" parent="Stats"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+text = "+1"
+
+[node name="Label2" type="Label" parent="Stats"]
+custom_minimum_size = Vector2(150, 25)
+layout_mode = 2
+text = "Label x"
+label_settings = SubResource("LabelSettings_own47")
+
+[node name="Button2" type="Button" parent="Stats"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+text = "+1"
+
+[node name="Label3" type="Label" parent="Stats"]
+custom_minimum_size = Vector2(150, 25)
+layout_mode = 2
+text = "Label x"
+label_settings = SubResource("LabelSettings_own47")
+
+[node name="Button3" type="Button" parent="Stats"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+text = "+1"
+
+[node name="Label4" type="Label" parent="Stats"]
+custom_minimum_size = Vector2(150, 25)
+layout_mode = 2
+text = "Label x"
+label_settings = SubResource("LabelSettings_own47")
+
+[node name="Button4" type="Button" parent="Stats"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+text = "+1"
+
+[node name="Label5" type="Label" parent="Stats"]
+custom_minimum_size = Vector2(150, 25)
+layout_mode = 2
+text = "Label x"
+label_settings = SubResource("LabelSettings_own47")
+
+[node name="Button5" type="Button" parent="Stats"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+text = "+1"
+
+[node name="Label6" type="Label" parent="Stats"]
+custom_minimum_size = Vector2(150, 25)
+layout_mode = 2
+text = "Label x"
+label_settings = SubResource("LabelSettings_own47")
+
+[node name="Button6" type="Button" parent="Stats"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+text = "+1"
+
+[node name="Label7" type="Label" parent="Stats"]
+custom_minimum_size = Vector2(150, 25)
+layout_mode = 2
+text = "Label x"
+label_settings = SubResource("LabelSettings_own47")
+
+[node name="Button7" type="Button" parent="Stats"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+text = "+1"
+
+[node name="Label8" type="Label" parent="Stats"]
+custom_minimum_size = Vector2(150, 25)
+layout_mode = 2
+text = "Label x"
+label_settings = SubResource("LabelSettings_own47")
+
+[node name="Button8" type="Button" parent="Stats"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+text = "+1"
+
+[node name="Label9" type="Label" parent="Stats"]
+custom_minimum_size = Vector2(150, 25)
+layout_mode = 2
+text = "Label x"
+label_settings = SubResource("LabelSettings_own47")
+
+[node name="Button9" type="Button" parent="Stats"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+text = "+1"
+
+[node name="Label10" type="Label" parent="Stats"]
+custom_minimum_size = Vector2(150, 25)
+layout_mode = 2
+text = "Label x"
+label_settings = SubResource("LabelSettings_own47")
+
+[node name="Button10" type="Button" parent="Stats"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+text = "+1"
+
+[node name="Label11" type="Label" parent="Stats"]
+custom_minimum_size = Vector2(150, 25)
+layout_mode = 2
+text = "Label x"
+label_settings = SubResource("LabelSettings_own47")
+
+[node name="Button11" type="Button" parent="Stats"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+text = "+1"
+
+[node name="Label12" type="Label" parent="Stats"]
+custom_minimum_size = Vector2(150, 25)
+layout_mode = 2
+text = "Label x"
+label_settings = SubResource("LabelSettings_own47")
+
+[node name="Button12" type="Button" parent="Stats"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+text = "+1"
+
+[node name="Label13" type="Label" parent="Stats"]
+custom_minimum_size = Vector2(150, 25)
+layout_mode = 2
+text = "Label x"
+label_settings = SubResource("LabelSettings_own47")
+
+[node name="Button13" type="Button" parent="Stats"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+text = "+1"
+
+[node name="Label14" type="Label" parent="Stats"]
+custom_minimum_size = Vector2(150, 25)
+layout_mode = 2
+text = "Label x"
+label_settings = SubResource("LabelSettings_own47")
+
+[node name="Button14" type="Button" parent="Stats"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+text = "+1"
+
+[node name="Label15" type="Label" parent="Stats"]
+custom_minimum_size = Vector2(150, 25)
+layout_mode = 2
+text = "Label x"
+label_settings = SubResource("LabelSettings_own47")
+
+[node name="Button15" type="Button" parent="Stats"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+text = "+1"
+
+[node name="Label16" type="Label" parent="Stats"]
+custom_minimum_size = Vector2(150, 25)
+layout_mode = 2
+text = "Label x"
+label_settings = SubResource("LabelSettings_own47")
+
+[node name="Button16" type="Button" parent="Stats"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+text = "+1"
+
+[node name="temporaryLabel-SkillPoint" type="Label" parent="."]
+offset_left = 22.0
+offset_top = 90.0
+offset_right = 174.0
+offset_bottom = 118.0
+text = "SKILL POINTS: 0"
+label_settings = SubResource("LabelSettings_45a2i")
+
+[connection signal="pressed" from="Stats/health_button" to="." method="_on_button_pressed"]
