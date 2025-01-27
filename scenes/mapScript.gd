@@ -15,7 +15,7 @@ func _ready() -> void:
 	$"Buff Container/Arcane".buffType = 3
 	$"Buff Container/Speed".buffType = 4
 	$"Buff Container/Health".buffType = 5
-
+	$"Buff Container/Card".buffType = 6
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if(Input.is_action_just_pressed("mouseLeftClick") and !Input.is_action_just_pressed("SHFTLeftClick")):
@@ -26,6 +26,10 @@ func _process(_delta: float) -> void:
 		$UI/CardFrame.playCard(3)
 	if(Input.is_action_just_pressed("SHFTLeftClick")):
 		$UI/CardFrame.playCard(2)
+	if(Input.is_action_just_pressed("Tab")):
+		print("TAB")
+		get_tree().paused = true
+		$AddPoints.visible = true
 	if(Input.is_action_just_pressed("R_Pressed")):
 		$UI/arcaneDashChargesLayer.arcaneKeyPressed()
 		#Globals.spawnArcaneDash()

@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c6uhuuw8ywv" path="res://graphics/projectiles/Elemental.png" id="5_d1cio"]
 [ext_resource type="Texture2D" uid="uid://bxky823le78ci" path="res://graphics/projectiles/ArcaneElemental.png" id="6_jtq3n"]
 [ext_resource type="Texture2D" uid="uid://b3g71qj237pix" path="res://graphics/projectiles/ElementalPhysical.png" id="7_i2qus"]
-[ext_resource type="Texture2D" uid="uid://dxtoajuuk52sa" path="res://graphics/projectiles/ArcaneElementalPhysical.png" id="8_f3bpd"]
+[ext_resource type="Texture2D" uid="uid://cy52xsfqpu7mu" path="res://graphics/projectiles/ArcaneElementalPhysical.png" id="8_f3bpd"]
 [ext_resource type="Texture2D" uid="uid://fkaeh570ttpf" path="res://graphics/projectiles/Speed.png" id="9_e1gnd"]
 [ext_resource type="Texture2D" uid="uid://b5e5xv0vyorhn" path="res://graphics/projectiles/Heal.png" id="10_v2fio"]
 
@@ -311,9 +311,8 @@ position = Vector2(20, 7)
 rotation = 1.5708
 scale = Vector2(4.5, 4.5)
 sprite_frames = SubResource("SpriteFrames_tih1r")
-animation = &"9"
+animation = &"7"
 autoplay = "1"
-frame_progress = 0.443197
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-7.14286, -7.14286)

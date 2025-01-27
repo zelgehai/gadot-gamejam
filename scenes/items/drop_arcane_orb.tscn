@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://4l51mcl3o5id"]
+[gd_scene load_steps=37 format=3 uid="uid://4l51mcl3o5id"]
 
 [ext_resource type="Script" path="res://scenes/items/drop_arcane_orb.gd" id="1_urase"]
 [ext_resource type="Texture2D" uid="uid://bt8g61ocfgsml" path="res://graphics/items/DropWeights.png" id="2_6csh2"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dswhurye0h86o" path="res://graphics/items/DropArcaneOrb.png" id="2_sb2y0"]
 [ext_resource type="Texture2D" uid="uid://clha3vwmng0vt" path="res://graphics/items/DropElementalOrb.png" id="3_7r6qh"]
 [ext_resource type="Texture2D" uid="uid://bxcp8sdoue7v4" path="res://graphics/items/DropRocketBoots.png" id="4_n0okf"]
+[ext_resource type="Texture2D" uid="uid://b5dddhqvg8tdr" path="res://graphics/items/DropCard.png" id="7_cym6n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pyqt7"]
 atlas = ExtResource("2_6csh2")
@@ -85,6 +86,34 @@ region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ocod4"]
 atlas = ExtResource("2_kkdbb")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oa53x"]
+atlas = ExtResource("7_cym6n")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r0lts"]
+atlas = ExtResource("7_cym6n")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_00drq"]
+atlas = ExtResource("7_cym6n")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lrera"]
+atlas = ExtResource("7_cym6n")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppnr0"]
+atlas = ExtResource("7_cym6n")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjtwy"]
+atlas = ExtResource("7_cym6n")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o3hat"]
+atlas = ExtResource("7_cym6n")
 region = Rect2(192, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ol3xe"]
@@ -173,6 +202,32 @@ animations = [{
 "loop": true,
 "name": &"5",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oa53x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r0lts")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_00drq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lrera")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ppnr0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vjtwy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o3hat")
+}],
+"loop": true,
+"name": &"6",
+"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_way2n"]
@@ -188,8 +243,9 @@ texture_filter = 1
 position = Vector2(1.19209e-07, 0)
 scale = Vector2(0.960938, 0.980957)
 sprite_frames = SubResource("SpriteFrames_ol3xe")
-animation = &"5"
+animation = &"4"
 autoplay = "1"
+frame_progress = 0.0565138
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)

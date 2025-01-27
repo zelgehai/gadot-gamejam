@@ -23,10 +23,13 @@ func update_expTracker(exp):
 		$expTracker/Label.text = "Exp= "+str(Globals.player_experience)
 		$expTracker/Level.text = "Level= "+str(Globals.player_level)
 		Globals.experienceNeeded = Globals.experienceNeeded*Globals.experienceGrowthRate
-		get_tree().paused = true
-		call_deferred("levelUp")
 		
-func levelUp() -> void:
+func addCardScreen() -> void:
+		get_tree().paused = true
+		call_deferred("addCard")
+
+func addCard() -> void:
+	get_tree().paused = true
 	$"../LevelUpScreen".randomizeValues()
 	$"../LevelUpScreen".visible = true
 	

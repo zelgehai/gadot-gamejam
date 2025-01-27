@@ -157,7 +157,7 @@ texture = ExtResource("2_7svk5")
 texture_filter = 1
 position = Vector2(13, 15)
 sprite_frames = SubResource("SpriteFrames_wqrbr")
-animation = &"4"
+animation = &"2"
 autoplay = "1"
 
 [node name="Card2" type="AnimatedSprite2D" parent="CardImageList"]

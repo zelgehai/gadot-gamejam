@@ -24,6 +24,8 @@ func _process(_delta: float) -> void:
 		$AnimatedSprite2D.animation = str(buffType)
 	if(buffType == 5):
 		$AnimatedSprite2D.animation = str(buffType)
+	if(buffType == 6):
+		$AnimatedSprite2D.animation = str(buffType)
 
 func _on_body_entered(_body: Node2D) -> void:
 	match buffType:
@@ -45,6 +47,10 @@ func _on_body_entered(_body: Node2D) -> void:
 			call_deferred("queue_free")
 		5:
 			print("Player picked up Health Buff")
+			call_deferred("pushBuff")
+			call_deferred("queue_free")
+		6:
+			print("Player picked up Card Addition Buff")
 			call_deferred("pushBuff")
 			call_deferred("queue_free")
 	
