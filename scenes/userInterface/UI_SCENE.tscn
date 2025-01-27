@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://butonx8vh6n56"]
+[gd_scene load_steps=12 format=3 uid="uid://butonx8vh6n56"]
 
 [ext_resource type="Script" path="res://graphics/projectiles/ui_scene.gd" id="1_5msul"]
 [ext_resource type="Texture2D" uid="uid://d4fyswasn4p08" path="res://graphics/player/healthBG.png" id="2_7pcng"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b4kcixuv5u83d" path="res://graphics/player/healthPG.png" id="4_ng14c"]
 [ext_resource type="Script" path="res://scenes/userInterface/map_timer.gd" id="5_dgtim"]
 [ext_resource type="PackedScene" uid="uid://datqd22ua8q0a" path="res://scenes/card_frame.tscn" id="6_ni0p0"]
+[ext_resource type="PackedScene" uid="uid://c737c6aj6kjtp" path="res://scenes/arcaneDashCanvasLayer.tscn" id="7_e2tra"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_fqr7p"]
 font_size = 13
@@ -104,13 +105,15 @@ size_flags_vertical = 4
 layout_mode = 2
 text = "Level = 0"
 label_settings = SubResource("LabelSettings_vycdp")
+vertical_alignment = 1
 
 [node name="Label" type="Label" parent="expTracker"]
 texture_filter = 1
 layout_mode = 2
-text = "Exp= 0"
+text = "Exp = 0"
 label_settings = SubResource("LabelSettings_biuvj")
-horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="arcaneDashChargesLayer" parent="." instance=ExtResource("7_e2tra")]
 
 [connection signal="timeout" from="mapTimer/Timer" to="mapTimer" method="_on_timer_timeout"]

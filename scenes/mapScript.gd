@@ -31,7 +31,8 @@ func _process(_delta: float) -> void:
 		get_tree().paused = true
 		$AddPoints.visible = true
 	if(Input.is_action_just_pressed("R_Pressed")):
-		Globals.spawnArcaneDash()
+		$UI/arcaneDashChargesLayer.arcaneKeyPressed()
+		#Globals.spawnArcaneDash()
 	if(Input.is_action_just_pressed("ePressed")): #Press E to activate enemy spawning
 		if spawningActive == false:
 			print("ACTIVATING ENEMY SPAWNING")

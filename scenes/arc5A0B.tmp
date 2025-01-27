@@ -1,0 +1,68 @@
+[gd_scene load_steps=4 format=3 uid="uid://c737c6aj6kjtp"]
+
+[ext_resource type="Script" path="res://scenes/arcane_dash_canvas_layer.gd" id="1_wnyso"]
+[ext_resource type="Texture2D" uid="uid://yc8jocq3w003" path="res://graphics/projectiles/tempPurpleNew.png" id="2_m5fu0"]
+[ext_resource type="Texture2D" uid="uid://c4ll2jmff53kc" path="res://graphics/projectiles/tempBlackNew.png" id="3_6m18c"]
+
+[node name="ArcaneDashCL" type="CanvasLayer"]
+script = ExtResource("1_wnyso")
+
+[node name="HContainer" type="HBoxContainer" parent="."]
+texture_filter = 1
+layout_direction = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -12.0
+offset_right = 28.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="bar1" type="TextureProgressBar" parent="HContainer"]
+layout_mode = 2
+step = 5.0
+value = 100.0
+fill_mode = 5
+texture_under = ExtResource("2_m5fu0")
+texture_progress = ExtResource("3_6m18c")
+
+[node name="bar2" type="TextureProgressBar" parent="HContainer"]
+layout_mode = 2
+step = 5.0
+value = 100.0
+fill_mode = 5
+texture_progress = ExtResource("3_6m18c")
+
+[node name="bar3" type="TextureProgressBar" parent="HContainer"]
+layout_mode = 2
+step = 5.0
+value = 100.0
+fill_mode = 5
+texture_progress = ExtResource("3_6m18c")
+
+[node name="bar4" type="TextureProgressBar" parent="HContainer"]
+layout_mode = 2
+step = 5.0
+value = 100.0
+fill_mode = 5
+texture_progress = ExtResource("3_6m18c")
+
+[node name="cd1" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="cd2" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="cd3" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="cd4" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
