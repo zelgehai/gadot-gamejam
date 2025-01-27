@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://cmtyep2mwq6fj"]
+
+[ext_resource type="Texture2D" uid="uid://cn0jnclr2lvy4" path="res://graphics/projectiles/bombRatDeath.png" id="1_bbju1"]
+[ext_resource type="Script" path="res://graphics/projectiles/bomb.gd" id="1_r86vn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dabbn"]
+atlas = ExtResource("1_bbju1")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fk4b6"]
+atlas = ExtResource("1_bbju1")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0ruw"]
+atlas = ExtResource("1_bbju1")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0boux"]
+atlas = ExtResource("1_bbju1")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wr2u6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dabbn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fk4b6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x0ruw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0boux")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8etej"]
+radius = 6.5
+
+[node name="Bomb" type="Area2D"]
+texture_filter = 1
+scale = Vector2(4, 4)
+script = ExtResource("1_r86vn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_wr2u6")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 1.25)
+shape = SubResource("CircleShape2D_8etej")
+
+[node name="spellDuration" type="Timer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="spellDuration" to="." method="_on_spell_duration_timeout"]

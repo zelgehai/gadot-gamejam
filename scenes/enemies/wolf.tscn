@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://co5lq37w3ttg8"]
 
 [ext_resource type="Texture2D" uid="uid://bsei3yb2rgxyw" path="res://graphics/enemies/wolf.png" id="1_qf0y4"]
-[ext_resource type="Script" path="res://scenes/wolfScript.gd" id="1_rj4cf"]
+[ext_resource type="Script" path="res://scenes/enemies/wolfScript.gd" id="1_rj4cf"]
 
 [node name="wolf" type="CharacterBody2D"]
 collision_layer = 6
-collision_mask = 63
+collision_mask = 3
 script = ExtResource("1_rj4cf")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]

@@ -6,9 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://i25sipd15uge" path="res://graphics/terrain/grassWithFlowers.png" id="3_m72eq"]
 [ext_resource type="Texture2D" uid="uid://b8mx1qqg7fmam" path="res://graphics/terrain/Paths.png" id="4_mxirn"]
 [ext_resource type="Texture2D" uid="uid://d4jo3l1rowiww" path="res://graphics/terrain/plainGrass.png" id="4_qdluy"]
-[ext_resource type="PackedScene" uid="uid://dfajhbafhdpsm" path="res://scenes/StaticRedBoxScene.tscn" id="4_tgps5"]
 [ext_resource type="PackedScene" uid="uid://butonx8vh6n56" path="res://scenes/userInterface/UI_SCENE.tscn" id="5_f8nn4"]
 [ext_resource type="Texture2D" uid="uid://cb4t5mpvc1ah1" path="res://graphics/terrain/pathEnd.png" id="5_jviv0"]
+
 [ext_resource type="Texture2D" uid="uid://bet26ta7plii0" path="res://graphics/terrain/darkerGrass.png" id="6_fi512"]
 [ext_resource type="PackedScene" uid="uid://ikxnhdmdkjou" path="res://scenes/animated_tree.tscn" id="6_l3ewc"]
 [ext_resource type="PackedScene" uid="uid://4l51mcl3o5id" path="res://scenes/items/drop_arcane_orb.tscn" id="6_u43r8"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://coriq1ssk7wb5" path="res://scenes/animated_bush.tscn" id="7_y5umk"]
 [ext_resource type="Texture2D" uid="uid://bet0nk0k8d6p2" path="res://graphics/terrain/darkerGrassPath.png" id="8_dnin1"]
 [ext_resource type="Texture2D" uid="uid://d4shyxubncr1" path="res://graphics/terrain/darkerPathEnd.png" id="9_atlk5"]
+
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ek0rm"]
 texture = ExtResource("4_qdluy")
@@ -551,9 +552,6 @@ position = Vector2(693, 829)
 [node name="animatedBush6" parent="Ground" instance=ExtResource("7_y5umk")]
 position = Vector2(713, 314)
 
-[node name="StaticRedBox3" parent="." instance=ExtResource("4_tgps5")]
-position = Vector2(870, 431)
-
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
 scale = Vector2(4, 4)
@@ -565,9 +563,6 @@ layer_0/tile_data = PackedInt32Array(0, 131074, 0, 76, 2, 0, 77, 196610, 0, 75, 
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TileMap/StaticBody2D"]
 polygon = PackedVector2Array(0, 0.5, 1244.25, 0.5, 1232, 16.25, 15.75, 15.75, 16.5, 1230.75, 1231.25, 1232.25, 1233, 15, 1247, 1.75, 1248.25, 1247.5, 0.25, 1248)
-
-[node name="StaticRedBox" parent="." instance=ExtResource("4_tgps5")]
-position = Vector2(871, 145)
 
 [node name="enemies" type="Node2D" parent="."]
 
@@ -810,6 +805,8 @@ position = Vector2(4000, 4500)
 position = Vector2(4500, 4500)
 
 [node name="mobSpawnTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
 
 [node name="Buff Container" type="Node2D" parent="."]
 
@@ -829,8 +826,16 @@ position = Vector2(282, 548)
 position = Vector2(454, 548)
 
 [node name="TimeWhenSpawnRateIncreases" type="Timer" parent="."]
-wait_time = 6.0
+wait_time = 20.0
 autostart = true
+
+[node name="miniBoltTimer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="LevelUpScreen" parent="." instance=ExtResource("12_nx6yq")]
+visible = false
 
 [connection signal="timeout" from="mobSpawnTimer" to="." method="_on_mob_spawn_timer_timeout"]
 [connection signal="timeout" from="TimeWhenSpawnRateIncreases" to="." method="_on_time_when_spawn_rate_increases_timeout"]
+[connection signal="timeout" from="miniBoltTimer" to="." method="_on_mini_bolt_timer_timeout"]
