@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://doo0npol5ooyh"]
 
-[ext_resource type="Script" path="res://scenes/cards/mini_bolt.gd" id="1_e2y0f"]
+[ext_resource type="Script" path="res://scenes/mini_bolt.gd" id="1_e2y0f"]
 [ext_resource type="Texture2D" uid="uid://cgtcgekh2vxt8" path="res://graphics/projectiles/Mini_Bolt.png" id="1_xeq7s"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v15v7"]

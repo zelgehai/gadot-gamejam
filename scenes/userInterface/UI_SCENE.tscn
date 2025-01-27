@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://butonx8vh6n56"]
+[gd_scene load_steps=7 format=3 uid="uid://butonx8vh6n56"]
 
 [ext_resource type="Script" path="res://graphics/projectiles/ui_scene.gd" id="1_5msul"]
 [ext_resource type="Texture2D" uid="uid://d4fyswasn4p08" path="res://graphics/player/healthBG.png" id="2_7pcng"]
@@ -7,81 +7,56 @@
 [ext_resource type="Script" path="res://scenes/userInterface/map_timer.gd" id="5_dgtim"]
 [ext_resource type="PackedScene" uid="uid://datqd22ua8q0a" path="res://scenes/card_frame.tscn" id="6_ni0p0"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_fqr7p"]
-font_size = 13
-
-[sub_resource type="LabelSettings" id="LabelSettings_7rwko"]
-font_size = 25
-
-[sub_resource type="LabelSettings" id="LabelSettings_vycdp"]
-font_size = 20
-
-[sub_resource type="LabelSettings" id="LabelSettings_biuvj"]
-font_size = 20
-
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_5msul")
 
 [node name="healthCounter" type="Control" parent="."]
 texture_filter = 1
 layout_mode = 3
-anchor_left = 0.5
-anchor_top = 0.88
+anchor_left = 0.45
+anchor_top = 0.846
 anchor_right = 0.5
-anchor_bottom = 0.88
+anchor_bottom = 0.846
+offset_left = -52.0
+offset_top = -88.0
+offset_right = 52.0
 grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(4, 3.976)
+grow_vertical = 0
+scale = Vector2(1.99382, 1.98206)
 
 [node name="Label" type="Label" parent="healthCounter"]
 texture_filter = 1
-layout_mode = 1
-anchors_preset = -1
-offset_left = -25.0
-offset_right = 32.0
-offset_bottom = 18.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.5, 0.5)
-text = "Health: 0"
-label_settings = SubResource("LabelSettings_fqr7p")
+layout_mode = 2
+offset_left = 5.5
+offset_top = 45.5
+offset_right = 57.5
+offset_bottom = 69.5
+scale = Vector2(0.7, 0.7)
+text = "Health: 5"
 horizontal_alignment = 1
 
 [node name="healthBar" type="TextureProgressBar" parent="healthCounter"]
 texture_filter = 1
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -31.0
-offset_top = -13.9638
-offset_right = 1.0
-offset_bottom = 18.0362
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(2, 2)
+layout_mode = 2
+offset_top = 27.0
+offset_right = 32.0
+offset_bottom = 59.0
+scale = Vector2(3, 3)
 max_value = 20.0
 value = 7.0
 texture_under = ExtResource("2_7pcng")
 texture_over = ExtResource("3_lnund")
 texture_progress = ExtResource("4_ng14c")
 
-[node name="mapTimer" type="Control" parent="."]
-layout_mode = 3
-anchor_left = 0.92
-anchor_top = 0.05
-anchor_right = 1.0
-anchor_bottom = 0.1
+[node name="mapTimer" type="Node2D" parent="."]
 script = ExtResource("5_dgtim")
 
 [node name="TimerLabel" type="Label" parent="mapTimer"]
-layout_mode = 1
-offset_right = 175.0
-offset_bottom = 35.0
-text = "00:00"
-label_settings = SubResource("LabelSettings_7rwko")
+offset_left = 1160.0
+offset_top = 19.0
+offset_right = 1273.0
+offset_bottom = 42.0
+text = "Timer: 0 m 01s"
 
 [node name="Timer" type="Timer" parent="mapTimer"]
 autostart = true
@@ -90,26 +65,23 @@ autostart = true
 
 [node name="expTracker" type="VBoxContainer" parent="."]
 anchors_preset = -1
-anchor_left = 0.95
-anchor_top = 0.5
-anchor_right = 0.97
-anchor_bottom = 1.0
-offset_left = -67.0
-grow_horizontal = 0
-grow_vertical = 2
+anchor_left = 0.932
+anchor_top = 0.45
+anchor_right = 0.932
+anchor_bottom = 0.45
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 0
 size_flags_horizontal = 0
 size_flags_vertical = 4
-
-[node name="Level" type="Label" parent="expTracker"]
-layout_mode = 2
-text = "Level = 0"
-label_settings = SubResource("LabelSettings_vycdp")
 
 [node name="Label" type="Label" parent="expTracker"]
 texture_filter = 1
 layout_mode = 2
 text = "Exp= 0"
-label_settings = SubResource("LabelSettings_biuvj")
 horizontal_alignment = 1
 vertical_alignment = 1
 

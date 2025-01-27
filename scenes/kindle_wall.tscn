@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://o4weq2f455gr"]
 
-[ext_resource type="Script" path="res://scenes/cards/kindle_wall.gd" id="1_0p7be"]
+[ext_resource type="Script" path="res://scenes/kindle_wall.gd" id="1_0p7be"]
 [ext_resource type="Texture2D" uid="uid://bo1dxr002sqi0" path="res://graphics/projectiles/Kindle Wall.png" id="1_h7wqo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2kexc"]

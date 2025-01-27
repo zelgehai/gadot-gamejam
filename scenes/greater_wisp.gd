@@ -3,15 +3,15 @@ var canDamage = true
 var canShoot = true
 var player_node: CharacterBody2D = null #reference to the player node
 var direction_to_player = Vector2(1,0)
-var speed = 50 #Max Speed of Rock Giant
+var speed = 40 #Max Speed of Wisp
 var randomized_speed = 1
 var is_dead = false
 
-var power = 5
+var power = 2
 var itemType = 4 #
-var dropChance = 5
-var health = 400
-var mob_experience = 10
+var dropChance = 100
+var health = 10
+var mob_experience = 1
 
 func _ready() -> void:
 	direction_to_player = (player_node.global_position - global_position).normalized()
@@ -24,7 +24,7 @@ func _process(_delta: float) -> void:
 		#Calculate Distance to player
 		var distance_to_player = global_position.distance_to(player_node.global_position)
 		
-		if distance_to_player <= 800:
+		if distance_to_player <= 500:
 			velocity = Vector2.ZERO
 			shootPlayer()
 		else:
@@ -59,11 +59,10 @@ func shootPlayer() -> void:
 	if  canShoot == true:
 		canShoot = false
 		$shootSpellCooldown.start()
-		var RockAtk = Globals.rock_spell.instantiate() as Area2D
-		RockAtk.player_node = $"../../../map/Player"
-		RockAtk.rockGiant_Node = $"."
-		RockAtk.position = $Marker2D.global_position
-		$"../../../map/EnemyProjectiles".add_child(RockAtk)
+		var gwispAttack = Globals.greater_wisp_spell.instantiate() as Area2D
+		gwispAttack.player_node = $"../../../map/Player"
+		gwispAttack.wisp_node = $"."
+		$"../../../map/EnemyProjectiles".add_child(gwispAttack)
 
 func _on_timer_timeout() -> void:
 	canDamage = true

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://5ka7168y14ir"]
 
-[ext_resource type="Script" path="res://scenes/enemies/greater_wisp.gd" id="1_kehkk"]
+[ext_resource type="Script" path="res://scenes/greater_wisp.gd" id="1_kehkk"]
 [ext_resource type="Texture2D" uid="uid://bmci3rwkwa0vu" path="res://graphics/enemies/greater_wisp.png" id="2_xpj1l"]
 
 [node name="greater_wisp" type="CharacterBody2D"]

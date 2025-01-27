@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://mvhhqd5dgu6w"]
+
+[ext_resource type="Script" path="res://scenes/ogre.gd" id="1_d31aw"]
+[ext_resource type="Texture2D" uid="uid://db2837waghvim" path="res://graphics/enemies/Ogre.png" id="1_ka18o"]
+
+[node name="Ogre" type="CharacterBody2D"]
+texture_filter = 1
+scale = Vector2(15, 15)
+collision_layer = 12
+collision_mask = 9
+script = ExtResource("1_d31aw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ka18o")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-9, 1, -9, 2.83333, -8, 2.83333, -8, 3.83333, -6.83333, 3.83333, -7, 4.83333, 6, 5, 11, 0.833333, 11.6667, -6.66667, 8, -5, 4.16667, 0, 1.83333, -2.16667, -3.16667, -2)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-9, 1, -9, 2.83333, -8, 2.83333, -8, 3.83333, -6.83333, 3.83333, -7, 4.83333, 6, 5, 11, 0.833333, 11.6667, -6.66667, 8, -5, 4.16667, 0, 1.83333, -2.16667, -3.16667, -2)
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
