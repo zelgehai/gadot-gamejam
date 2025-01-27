@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://cr02d7g6olt5b"]
+
+[ext_resource type="Script" path="res://scenes/enemies/rock_giant.gd" id="1_6pnti"]
+[ext_resource type="Texture2D" uid="uid://bopjbbkmgp8le" path="res://graphics/enemies/RockGiant.png" id="1_efjhb"]
+
+[node name="RockGiant" type="CharacterBody2D"]
+texture_filter = 1
+scale = Vector2(13, 13)
+script = ExtResource("1_6pnti")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("1_efjhb")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-5, -5, -10, 0, -10, 7, -8, 9, -4, 9, -3, 11, 3, 11, 4, 9, 8, 9, 10, 7, 10, 4, 9, 4, 9, 0, 8, -3, 5, -6, 0, -8)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-5, -5, -10, 0, -10, 7, -8, 9, -4, 9, -3, 11, 3, 11, 4, 9, 8, 9, 10, 7, 10, 4, 9, 4, 9, 0, 8, -3, 5, -6, 0, -8)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.4
+
+[node name="shootSpellCooldown" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, -8)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="shootSpellCooldown" to="." method="_on_shoot_spell_cooldown_timeout"]

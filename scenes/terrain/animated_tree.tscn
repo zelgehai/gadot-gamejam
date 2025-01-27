@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://ikxnhdmdkjou"]
+
+[ext_resource type="Texture2D" uid="uid://clmb25n0lhdiu" path="res://graphics/terrain/animatedTree.png" id="1_7ogd2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pl7v7"]
+atlas = ExtResource("1_7ogd2")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7wnf"]
+atlas = ExtResource("1_7ogd2")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1n3e"]
+atlas = ExtResource("1_7ogd2")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qrxbv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pl7v7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p7wnf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a1n3e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="animatedTree" type="StaticBody2D"]
+texture_filter = 1
+scale = Vector2(5, 5)
+collision_layer = 4
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qrxbv")
+autoplay = "default"
+frame_progress = 0.148357
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-4.8, 11.8, -5, 11, -4, 11, -4, 9.8, -3, 10, -3, 7, -2.6, -4.8, 0.8, -4.6, 1, 9, 2, 9, 2, 10.8, 3, 11, 3, 11.8)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5e5xv0vyorhn"
-path="res://.godot/imported/Heal.png-d1f1b63daef0f9b38c48ac681efdd7c3.ctex"
+uid="uid://bckuyeg8erng0"
+path="res://.godot/imported/newOgre.png-a825203110152e386cad344a8876d03c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/projectiles/Heal.png"
-dest_files=["res://.godot/imported/Heal.png-d1f1b63daef0f9b38c48ac681efdd7c3.ctex"]
+source_file="res://graphics/enemies/newOgre.png"
+dest_files=["res://.godot/imported/newOgre.png-a825203110152e386cad344a8876d03c.ctex"]
 
 [params]
 

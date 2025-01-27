@@ -199,29 +199,45 @@ one_shot = true
 wait_time = 6.0
 one_shot = true
 
-[node name="cooldownOverLay1" type="Sprite2D" parent="."]
-visible = false
+[node name="cooldownOverLay1" type="TextureProgressBar" parent="."]
 texture_filter = 1
-position = Vector2(13, 15)
-texture = ExtResource("4_e2uv2")
+offset_left = -2.66667
+offset_top = -1.0
+offset_right = 29.3333
+offset_bottom = 31.0
+value = 80.0
+fill_mode = 5
+texture_progress = ExtResource("4_e2uv2")
 
-[node name="cooldownOverLay2" type="Sprite2D" parent="."]
-visible = false
+[node name="cooldownOverLay2" type="TextureProgressBar" parent="."]
 texture_filter = 1
-position = Vector2(35, 15)
-texture = ExtResource("4_e2uv2")
+offset_left = 19.3333
+offset_top = -1.33334
+offset_right = 51.3333
+offset_bottom = 30.6667
+value = 80.0
+fill_mode = 5
+texture_progress = ExtResource("4_e2uv2")
 
-[node name="cooldownOverLay3" type="Sprite2D" parent="."]
-visible = false
+[node name="cooldownOverLay3" type="TextureProgressBar" parent="."]
 texture_filter = 1
-position = Vector2(57, 15)
-texture = ExtResource("4_e2uv2")
+offset_left = 41.3333
+offset_top = -1.33333
+offset_right = 73.3333
+offset_bottom = 30.6667
+value = 80.0
+fill_mode = 5
+texture_progress = ExtResource("4_e2uv2")
 
-[node name="cooldownOverLay4" type="Sprite2D" parent="."]
-visible = false
+[node name="cooldownOverLay4" type="TextureProgressBar" parent="."]
 texture_filter = 1
-position = Vector2(79, 15)
-texture = ExtResource("4_e2uv2")
+offset_left = 63.1667
+offset_top = -1.0
+offset_right = 95.1666
+offset_bottom = 31.0
+value = 80.0
+fill_mode = 5
+texture_progress = ExtResource("4_e2uv2")
 
 [node name="LeftClick" type="Sprite2D" parent="."]
 texture_filter = 1

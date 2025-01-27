@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5e5xv0vyorhn"
-path="res://.godot/imported/Heal.png-d1f1b63daef0f9b38c48ac681efdd7c3.ctex"
+uid="uid://cn0jnclr2lvy4"
+path="res://.godot/imported/bombRatDeath.png-cf7cdfc79526016c707543b4d9397a50.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/projectiles/Heal.png"
-dest_files=["res://.godot/imported/Heal.png-d1f1b63daef0f9b38c48ac681efdd7c3.ctex"]
+source_file="res://graphics/projectiles/bombRatDeath.png"
+dest_files=["res://.godot/imported/bombRatDeath.png-cf7cdfc79526016c707543b4d9397a50.ctex"]
 
 [params]
 
