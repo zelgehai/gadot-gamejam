@@ -20,7 +20,7 @@ func player_hit():
 	print("Player was HIT, Health = ", Globals.health_amount)
 	$"../UI".update_health_amount()
 	if Globals.health_amount <= 0:
-		get_tree().change_scene_to_file("res://scenes/userInterface/death_scene.tscn")
+		get_tree().call_deferred("change_scene_to_file", "res://scenes/userInterface/death_scene.tscn")
 	
 func giveDirection() -> Vector2:
 	return player_direction

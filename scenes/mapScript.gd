@@ -27,7 +27,8 @@ func _process(_delta: float) -> void:
 	if(Input.is_action_just_pressed("SHFTLeftClick")):
 		$UI/CardFrame.playCard(2)
 	if(Input.is_action_just_pressed("R_Pressed")):
-		Globals.spawnArcaneDash()
+		$UI/arcaneDashChargesLayer.arcaneKeyPressed()
+		#Globals.spawnArcaneDash()
 	if(Input.is_action_just_pressed("ePressed")): #Press E to activate enemy spawning
 		if spawningActive == false:
 			print("ACTIVATING ENEMY SPAWNING")
