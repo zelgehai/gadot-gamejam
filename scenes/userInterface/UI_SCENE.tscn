@@ -63,8 +63,8 @@ offset_bottom = 18.0362
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
-max_value = 20.0
-value = 7.0
+max_value = 10.0
+value = 10.0
 texture_under = ExtResource("2_7pcng")
 texture_over = ExtResource("3_lnund")
 texture_progress = ExtResource("4_ng14c")
@@ -113,6 +113,11 @@ layout_mode = 2
 text = "Exp = 0"
 label_settings = SubResource("LabelSettings_biuvj")
 vertical_alignment = 1
+
+[node name="lvlPercentage" type="Label" parent="expTracker"]
+layout_mode = 2
+text = "0%"
+horizontal_alignment = 1
 
 [node name="arcaneDashChargesLayer" parent="." instance=ExtResource("7_e2tra")]
 

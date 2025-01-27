@@ -16,6 +16,8 @@ var max_health_amount = 10 #Should be the same as Starting Health, Game level St
 var Invulnerable = false
 var player_experience = 0
 var player_level = 0
+var skill_points = 0   #skill points earned when leveled
+
 
 #Level Up Map
 var experienceNeeded = 1
