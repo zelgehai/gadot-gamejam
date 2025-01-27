@@ -36,6 +36,10 @@ func _on_button_slot_3_pressed() -> void:
 	Globals.DECK_LIST.append(cardList[2])
 	get_tree().paused = false
 	$".".visible = false
+	
+func _on_button_slot_4_pressed() -> void:
+	get_tree().paused = false
+	$".".visible = false
 
 func randomizeValues() -> void:
 	cardList[0] = randi() % maxRandomRange + minRandomRange

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cy52xsfqpu7mu"
-path="res://.godot/imported/ArcaneElementalPhysical.png-7ed4526c8d1093803f8ca9ea7857c902.ctex"
+uid="uid://b5dddhqvg8tdr"
+path="res://.godot/imported/DropCard.png-26647417512536a9ba62fb26823b3f26.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/projectiles/ArcaneElementalPhysical.png"
-dest_files=["res://.godot/imported/ArcaneElementalPhysical.png-7ed4526c8d1093803f8ca9ea7857c902.ctex"]
+source_file="res://graphics/items/DropCard.png"
+dest_files=["res://.godot/imported/DropCard.png-26647417512536a9ba62fb26823b3f26.ctex"]
 
 [params]
 
