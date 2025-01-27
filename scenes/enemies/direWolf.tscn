@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://b52ytcl58tqt2"]
+
+[ext_resource type="Script" path="res://scenes/enemies/direWolf.gd" id="1_ex4u2"]
+[ext_resource type="Texture2D" uid="uid://db4ixg7d1fmjk" path="res://graphics/enemies/DireWolfNew.png" id="2_pqm8b"]
+
+[node name="DireWolf" type="CharacterBody2D"]
+texture_filter = 1
+scale = Vector2(8, 8)
+collision_layer = 6
+script = ExtResource("1_ex4u2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_pqm8b")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+texture_filter = 1
+polygon = PackedVector2Array(-4, 11.625, -3.625, 14, -0.5, 14, 3, 11.625, 3.25, 11.125, 3, 6.375, 2.625, 5.125, 3.625, 3.75, 3.875, 0.125, 3.875, -4.5, 3, -11.625, 0.75, -14.625, -0.75, -14.75, -2.875, -11.375, -4, -4.625, -4, -2, -4, 4, -3, 5.875, -3, 10.75)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+texture_filter = 1
+polygon = PackedVector2Array(-4, 11.625, -3.625, 14, -0.5, 14, 3, 11.625, 3.25, 11.125, 3, 6.375, 2.625, 5.125, 3.625, 3.75, 3.875, 0.125, 3.875, -4.5, 3, -11.625, 0.75, -14.625, -0.75, -14.75, -2.875, -11.375, -4, -4.625, -4, -2, -4, 4, -3, 5.875, -3, 10.75)
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

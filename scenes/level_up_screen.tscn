@@ -1,0 +1,326 @@
+[gd_scene load_steps=29 format=3 uid="uid://dopikq5lg8my0"]
+
+[ext_resource type="Script" path="res://scenes/level_up_screen.gd" id="1_kv8db"]
+[ext_resource type="Texture2D" uid="uid://csu1ovg1b1rjj" path="res://graphics/CardFrame.png" id="2_4gdua"]
+[ext_resource type="Texture2D" uid="uid://boi84n23go2xs" path="res://graphics/card_MiniBolt.png" id="4_hk4b0"]
+[ext_resource type="Texture2D" uid="uid://bkusqkrxpqbqp" path="res://graphics/card_Slash.png" id="5_yttnn"]
+[ext_resource type="Texture2D" uid="uid://dhxlquwb8xy83" path="res://graphics/card_Block.png" id="6_8f74y"]
+[ext_resource type="Texture2D" uid="uid://cxmd8r4bnd8mo" path="res://graphics/card_KindleWall.png" id="7_0o6wc"]
+[ext_resource type="Texture2D" uid="uid://vglnrbkf7c7" path="res://scenes/LevelUpAnimation.png" id="7_6khb8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aeitn"]
+atlas = ExtResource("4_hk4b0")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5qqxv"]
+atlas = ExtResource("4_hk4b0")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d57x4"]
+atlas = ExtResource("4_hk4b0")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bt05v"]
+atlas = ExtResource("5_yttnn")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pu5aa"]
+atlas = ExtResource("5_yttnn")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rlwsa"]
+atlas = ExtResource("5_yttnn")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ug7ca"]
+atlas = ExtResource("6_8f74y")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6rbvc"]
+atlas = ExtResource("6_8f74y")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nntsa"]
+atlas = ExtResource("6_8f74y")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idg2x"]
+atlas = ExtResource("6_8f74y")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqqcq"]
+atlas = ExtResource("7_0o6wc")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cop5f"]
+atlas = ExtResource("7_0o6wc")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqjuf"]
+atlas = ExtResource("7_0o6wc")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oyreo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aeitn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5qqxv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d57x4")
+}],
+"loop": true,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bt05v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pu5aa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rlwsa")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ug7ca")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6rbvc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nntsa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idg2x")
+}],
+"loop": true,
+"name": &"3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uqqcq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cop5f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pqjuf")
+}],
+"loop": true,
+"name": &"4",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ok1rx"]
+atlas = ExtResource("7_6khb8")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqml6"]
+atlas = ExtResource("7_6khb8")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1xx1"]
+atlas = ExtResource("7_6khb8")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gkf0i"]
+atlas = ExtResource("7_6khb8")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8tew0"]
+atlas = ExtResource("7_6khb8")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_275w4"]
+atlas = ExtResource("7_6khb8")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tgwtb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ok1rx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqml6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l1xx1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gkf0i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8tew0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_275w4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="LevelUpScreen" type="CanvasLayer"]
+process_mode = 2
+script = ExtResource("1_kv8db")
+
+[node name="CardImageList" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.913725, 0.921569, 0.992157, 0.698039)
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+anchors_preset = -1
+anchor_left = 0.485
+anchor_top = 0.487
+anchor_right = 0.485
+anchor_bottom = 0.487
+offset_left = -191.8
+offset_top = 0.359985
+offset_right = 192.2
+offset_bottom = 23.36
+grow_horizontal = 2
+grow_vertical = 2
+uppercase = true
+
+[node name="ColorRect2" type="ColorRect" parent="Label"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.539
+anchor_top = -0.565
+anchor_right = 0.539
+anchor_bottom = -0.565
+offset_left = -264.976
+offset_top = -0.00500011
+offset_right = 265.024
+offset_bottom = 45.995
+color = Color(0, 0, 0, 0.764706)
+
+[node name="Label" type="Label" parent="Label"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.538
+anchor_right = 0.538
+offset_left = -166.592
+offset_top = -3.0
+offset_right = 166.408
+offset_bottom = 20.0
+text = "Level Up! Select a Card to add to your deck!"
+
+[node name="buttonSlot1" type="Button" parent="Label"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.684
+anchor_top = -13.435
+anchor_right = -0.684
+anchor_bottom = -13.435
+offset_left = -90.344
+offset_top = 1.005
+offset_right = 90.656
+offset_bottom = 257.005
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="buttonSlot2" type="Button" parent="Label"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.53
+anchor_top = -13.391
+anchor_right = 0.53
+anchor_bottom = -13.391
+offset_left = -90.52
+offset_top = -0.00698853
+offset_right = 90.48
+offset_bottom = 255.993
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="buttonSlot3" type="Button" parent="Label"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.751
+anchor_top = -13.391
+anchor_right = 1.751
+anchor_bottom = -13.391
+offset_left = -90.384
+offset_top = -0.00698853
+offset_right = 90.616
+offset_bottom = 255.993
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Slot 1" type="Sprite2D" parent="Label"]
+texture_filter = 1
+position = Vector2(-257, -180)
+scale = Vector2(10.7188, 10.7188)
+texture = ExtResource("2_4gdua")
+
+[node name="Slot 2" type="Sprite2D" parent="Label"]
+texture_filter = 1
+position = Vector2(209, -180)
+scale = Vector2(10.7188, 10.7188)
+texture = ExtResource("2_4gdua")
+
+[node name="Slot 3" type="Sprite2D" parent="Label"]
+texture_filter = 1
+position = Vector2(678, -180)
+scale = Vector2(10.7188, 10.7188)
+texture = ExtResource("2_4gdua")
+
+[node name="card1" type="AnimatedSprite2D" parent="Label"]
+texture_filter = 1
+position = Vector2(-257, -180)
+scale = Vector2(10.719, 10.719)
+sprite_frames = SubResource("SpriteFrames_oyreo")
+animation = &"1"
+autoplay = "1"
+frame_progress = 0.362094
+
+[node name="card2" type="AnimatedSprite2D" parent="Label"]
+texture_filter = 1
+position = Vector2(209, -180)
+scale = Vector2(10.719, 10.719)
+sprite_frames = SubResource("SpriteFrames_oyreo")
+animation = &"1"
+autoplay = "1"
+
+[node name="card3" type="AnimatedSprite2D" parent="Label"]
+texture_filter = 1
+position = Vector2(678, -180)
+scale = Vector2(10.719, 10.719)
+sprite_frames = SubResource("SpriteFrames_oyreo")
+animation = &"1"
+autoplay = "1"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Label"]
+texture_filter = 1
+position = Vector2(199, 203)
+scale = Vector2(9.6875, 9.6875)
+sprite_frames = SubResource("SpriteFrames_tgwtb")
+autoplay = "default"
+frame_progress = 0.362094
+
+[connection signal="pressed" from="Label/buttonSlot1" to="." method="_on_button_slot_1_pressed"]
+[connection signal="pressed" from="Label/buttonSlot2" to="." method="_on_button_slot_2_pressed"]
+[connection signal="pressed" from="Label/buttonSlot3" to="." method="_on_button_slot_3_pressed"]

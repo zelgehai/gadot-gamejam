@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://doo0npol5ooyh"]
+
+[ext_resource type="Script" path="res://scenes/cards/mini_bolt.gd" id="1_e2y0f"]
+[ext_resource type="Texture2D" uid="uid://cgtcgekh2vxt8" path="res://graphics/projectiles/Mini_Bolt.png" id="1_xeq7s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v15v7"]
+atlas = ExtResource("1_xeq7s")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t6bpe"]
+atlas = ExtResource("1_xeq7s")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p01g2"]
+atlas = ExtResource("1_xeq7s")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_541ta"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v15v7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t6bpe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p01g2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bj04j"]
+radius = 13.0
+height = 32.0
+
+[node name="MiniBolt" type="Area2D"]
+collision_layer = 8
+collision_mask = 15
+script = ExtResource("1_e2y0f")
+speed = 500
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-1, 10)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_541ta")
+autoplay = "default"
+frame_progress = 0.296936
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_bj04j")
+
+[node name="spellDuration" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="spellDuration" to="." method="_on_spell_duration_timeout"]

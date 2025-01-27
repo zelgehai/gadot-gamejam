@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5e5xv0vyorhn"
-path="res://.godot/imported/Heal.png-d1f1b63daef0f9b38c48ac681efdd7c3.ctex"
+uid="uid://7gh6nbu45m7d"
+path="res://.godot/imported/BigSlime.png-97d327a2ae09b6cfc58f8bc1d4823561.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/projectiles/Heal.png"
-dest_files=["res://.godot/imported/Heal.png-d1f1b63daef0f9b38c48ac681efdd7c3.ctex"]
+source_file="res://graphics/enemies/BigSlime.png"
+dest_files=["res://.godot/imported/BigSlime.png-97d327a2ae09b6cfc58f8bc1d4823561.ctex"]
 
 [params]
 
