@@ -22,7 +22,6 @@ grow_vertical = 0
 [node name="bar1" type="TextureProgressBar" parent="HContainer"]
 layout_mode = 2
 step = 5.0
-value = 100.0
 fill_mode = 5
 texture_under = ExtResource("2_m5fu0")
 texture_progress = ExtResource("3_6m18c")
@@ -30,7 +29,6 @@ texture_progress = ExtResource("3_6m18c")
 [node name="bar2" type="TextureProgressBar" parent="HContainer"]
 layout_mode = 2
 step = 5.0
-value = 100.0
 fill_mode = 5
 texture_under = ExtResource("2_m5fu0")
 texture_progress = ExtResource("3_6m18c")
@@ -38,7 +36,6 @@ texture_progress = ExtResource("3_6m18c")
 [node name="bar3" type="TextureProgressBar" parent="HContainer"]
 layout_mode = 2
 step = 5.0
-value = 100.0
 fill_mode = 5
 texture_under = ExtResource("2_m5fu0")
 texture_progress = ExtResource("3_6m18c")
@@ -46,7 +43,6 @@ texture_progress = ExtResource("3_6m18c")
 [node name="bar4" type="TextureProgressBar" parent="HContainer"]
 layout_mode = 2
 step = 5.0
-value = 100.0
 fill_mode = 5
 texture_under = ExtResource("2_m5fu0")
 texture_progress = ExtResource("3_6m18c")
