@@ -1,6 +1,7 @@
 extends Node2D
 var spawningActive = false
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	print("Setting Player Starting Position:")
@@ -16,6 +17,8 @@ func _ready() -> void:
 	$"Buff Container/Speed".buffType = 4
 	$"Buff Container/Health".buffType = 5
 	$"Buff Container/Card".buffType = 6
+	#test
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if(Input.is_action_just_pressed("mouseLeftClick") and !Input.is_action_just_pressed("SHFTLeftClick")):
@@ -43,64 +46,37 @@ func _process(_delta: float) -> void:
 			$mobSpawnTimer.stop()   #stops spawning
 			spawningActive = false
 
-
+func _on_mob_generated(mob_number):
+	print("Received Mob number:", mob_number)
+	
 #on Timer, Spawns a Random Mob type at a random mobSpawner Location
 func _on_mob_spawn_timer_timeout() -> void:
 	Globals.current_enemies_alive = $enemies.get_child_count()
 	print("# of enemies alive:", Globals.current_enemies_alive)
 	if Globals.current_enemies_alive < Globals.max_enemies_allowed:
-		#select random enemySpawner Location
+		##select random enemySpawner Location
 		var enemySpawnMarkers = $enemySpawners.get_children()
 		var selectedEnemyMarker = enemySpawnMarkers[randi() % enemySpawnMarkers.size()] #Randomly selects one of the markers
-		var mobType = randi() % 100 + 1 #Spawns Random mob type 1-100 value based on GLobal #
-		#print(mobType) #Debug purposes
-		if mobType <= Globals.wolf_Spawn_Rate: 
-			var wolf = Globals.wolf_scene.instantiate()
-			wolf.position = selectedEnemyMarker.global_position
-			wolf.player_node = $Player
-			$enemies.add_child(wolf) #spawned wolf
-		if mobType > Globals.wolf_Spawn_Rate and mobType <= Globals.wolf_Spawn_Rate+Globals.dire_Spawn_Rate:
-			var direWolf = Globals.direWolf_scene.instantiate()
-			direWolf.position = selectedEnemyMarker.global_position
-			direWolf.player_node = $Player
-			$enemies.add_child(direWolf)
-		if mobType > Globals.wolf_Spawn_Rate+Globals.dire_Spawn_Rate and mobType <= Globals.wolf_Spawn_Rate+Globals.dire_Spawn_Rate+Globals.ogre_Spawn_Rate:
-			var ogre = Globals.ogre_scene.instantiate()
-			ogre.position = selectedEnemyMarker.global_position
-			ogre.player_node = $Player
-			$enemies.add_child(ogre)
-		if mobType > Globals.wolf_Spawn_Rate+Globals.dire_Spawn_Rate+Globals.ogre_Spawn_Rate and mobType <= Globals.wolf_Spawn_Rate+Globals.dire_Spawn_Rate+Globals.ogre_Spawn_Rate+Globals.wisp_Spawn_Rate:
-			var wisp = Globals.wisp_scene.instantiate()
-			wisp.position = selectedEnemyMarker.global_position
-			wisp.player_node = $Player
-			$enemies.add_child(wisp)
-		if mobType > Globals.wolf_Spawn_Rate+Globals.dire_Spawn_Rate+Globals.ogre_Spawn_Rate+Globals.wisp_Spawn_Rate and mobType <= Globals.wolf_Spawn_Rate+Globals.dire_Spawn_Rate+Globals.ogre_Spawn_Rate+Globals.wisp_Spawn_Rate+Globals.greater_wisp_Spawn_Rate:
-			var gwisp = Globals.greater_wisp_scene.instantiate()
-			gwisp.position = selectedEnemyMarker.global_position
-			gwisp.player_node = $Player
-			$enemies.add_child(gwisp)
-		if mobType > Globals.wolf_Spawn_Rate+Globals.dire_Spawn_Rate+Globals.ogre_Spawn_Rate+Globals.wisp_Spawn_Rate+Globals.greater_wisp_Spawn_Rate and mobType <= Globals.bombrat_Spawn_Rate+Globals.wolf_Spawn_Rate+Globals.dire_Spawn_Rate+Globals.ogre_Spawn_Rate+Globals.wisp_Spawn_Rate+Globals.greater_wisp_Spawn_Rate:
-			var bombRat = Globals.bombrat_scene.instantiate()
-			bombRat.position = selectedEnemyMarker.global_position
-			bombRat.player_node = $Player
-			$enemies.add_child(bombRat)
-		if mobType > Globals.bombrat_Spawn_Rate+Globals.wolf_Spawn_Rate+Globals.dire_Spawn_Rate+Globals.ogre_Spawn_Rate+Globals.wisp_Spawn_Rate+Globals.greater_wisp_Spawn_Rate and mobType <= Globals.raven_Spawn_Rate+Globals.bombrat_Spawn_Rate+Globals.wolf_Spawn_Rate+Globals.dire_Spawn_Rate+Globals.ogre_Spawn_Rate+Globals.wisp_Spawn_Rate+Globals.greater_wisp_Spawn_Rate:
-			var raven = Globals.raven_scene.instantiate()
-			raven.position = selectedEnemyMarker.global_position
-			raven.player_node = $Player
-			$enemies.add_child(raven)
-		if mobType > Globals.raven_Spawn_Rate+Globals.bombrat_Spawn_Rate+Globals.wolf_Spawn_Rate+Globals.dire_Spawn_Rate+Globals.ogre_Spawn_Rate+Globals.wisp_Spawn_Rate+Globals.greater_wisp_Spawn_Rate and mobType <= Globals.bigSlime_Spawn_Rate+Globals.raven_Spawn_Rate+Globals.bombrat_Spawn_Rate+Globals.wolf_Spawn_Rate+Globals.dire_Spawn_Rate+Globals.ogre_Spawn_Rate+Globals.wisp_Spawn_Rate+Globals.greater_wisp_Spawn_Rate:
-			var bigSlime = Globals.bigSlime_scene.instantiate()
-			bigSlime.position = selectedEnemyMarker.global_position
-			bigSlime.player_node = $Player
-			$enemies.add_child(bigSlime)
-		if mobType > Globals.bigSlime_Spawn_Rate+Globals.raven_Spawn_Rate+Globals.bombrat_Spawn_Rate+Globals.wolf_Spawn_Rate+Globals.dire_Spawn_Rate+Globals.ogre_Spawn_Rate+Globals.wisp_Spawn_Rate+Globals.greater_wisp_Spawn_Rate and mobType <= +Globals.rockGiant_Spawn_Rate+ Globals.bigSlime_Spawn_Rate+Globals.raven_Spawn_Rate+Globals.bombrat_Spawn_Rate+Globals.wolf_Spawn_Rate+Globals.dire_Spawn_Rate+Globals.ogre_Spawn_Rate+Globals.wisp_Spawn_Rate+Globals.greater_wisp_Spawn_Rate:
-			var rockGiant = Globals.rockGiant_scene.instantiate()
-			rockGiant.position = selectedEnemyMarker.global_position
-			rockGiant.player_node = $Player
-			$enemies.add_child(rockGiant)
+		
+		#New Code---------------------------
+		var mob_data = $SpawnerAlgorithm.get_random_mob() #returns dictionary of the mob
+		if mob_data:
+			var mob_instance = mob_data.scene.instantiate() #uses mob's scene to instantiate
+			mob_instance.position = selectedEnemyMarker.global_position
+			mob_instance.player_node = $Player
+			#mob counter, for renaming purposes in the tree remote "enemies"
+			#renames the mob, then puts lists it under "enemies" in the map scene
+			if mob_data.name in $SpawnerAlgorithm.mob_count:
+				$SpawnerAlgorithm.mob_count[mob_data.name] += 1
+			else:
+				$SpawnerAlgorithm.mob_count[mob_data.name] = 1
+			#renames mob:
+			mob_instance.name = mob_data.name + str($SpawnerAlgorithm.mob_count[mob_data.name])
+			#Added Mob to the scene
+			$enemies.add_child(mob_instance)
 
 
+#code that increases the spawn rate by a % every x seconds
 func _on_time_when_spawn_rate_increases_timeout() -> void:
 	var max_spawnrate = 0.11
 	if $mobSpawnTimer.wait_time <= max_spawnrate:

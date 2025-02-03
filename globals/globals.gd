@@ -27,17 +27,6 @@ var experienceGrowthRate = 1.5
 var max_enemies_allowed = 500 #number of enemies allowed to be in the map / spawned
 var current_enemies_alive = 0 #number of enemies alive currently
 
-#Spawn Rates: # represents % chance. VALUES MUST ALL ADD TO 100!
-var wolf_Spawn_Rate = 40 	#40 10 1 10 5 10 8 15 1
-var dire_Spawn_Rate = 10
-var ogre_Spawn_Rate = 1
-var wisp_Spawn_Rate = 10
-var greater_wisp_Spawn_Rate = 5
-var bombrat_Spawn_Rate = 10
-var raven_Spawn_Rate = 8
-var bigSlime_Spawn_Rate = 15
-var rockGiant_Spawn_Rate = 1
-
 #Type Modifiers
 var arcaneDamageModifier = 1.00
 var elementalDamageModifier = 1.00
@@ -82,7 +71,8 @@ var rockGiant_scene: PackedScene = preload("res://scenes/enemies/rock_giant.tscn
 #Item Scene
 var health_potion_scene: PackedScene = preload("res://scenes/items/HealthPotion.tscn")
 var arcane_orb_scene: PackedScene = preload("res://scenes/items/drop_arcane_orb.tscn")
-
+#Mob Type Scene
+var Spawner_Algorithm_scene: PackedScene = preload("res://scenes/spawner_algorithm.tscn")
 #setting default values [this is important for restarting game after death]
 
 #Spawn Stuff
@@ -158,16 +148,7 @@ func reset_values() -> void:
 	#Mob Variables
 	max_enemies_allowed = 500 #number of enemies allowed to be in the map / spawned
 	current_enemies_alive = 0 #number of enemies alive currently
-	#Spawn Rates: # represents % chance. VALUES MUST ALL ADD TO 100!
-	wolf_Spawn_Rate = 40 
-	dire_Spawn_Rate = 10
-	ogre_Spawn_Rate = 1
-	wisp_Spawn_Rate = 10
-	greater_wisp_Spawn_Rate = 5
-	bombrat_Spawn_Rate = 10
-	raven_Spawn_Rate = 8
-	bigSlime_Spawn_Rate = 15
-	rockGiant_Spawn_Rate = 1
+
 	#Spell Modifiers
 	arcaneDamageModifier = 1.00
 	elementalDamageModifier = 1.00
